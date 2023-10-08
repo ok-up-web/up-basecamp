@@ -119,68 +119,61 @@ export default {
       ]
     },
     {
-    name: 'profileSettings',
-    title: 'Profile settings',
-    type: 'object',
-    fields: [
-      defineField({
-        name: 'linkType',
-        title: 'Choose link type',
-        type: 'string',
-        options: {
-          list: [
-            { title: 'Phone', value: 'phone' },
-            { title: 'Homepage', value: 'homepage' },
-            { title: 'Email', value: 'email' },
-            { title: 'Booking System', value: 'bookingsystem' },
-            { title: 'Booking Request', value: 'bookingrequest' },
-          ],
-          layout: 'radio', // or 'dropdown'
-        }
-      }),
-
-      defineField({
-        name: 'buttonUrl',
-        title: 'URL, Tel, or Mailto:',
-        type: 'string',
-        description: 'Enter the web address, email address (add mailto:name@domain.com), or phone number (add tel:number)',
-        hidden: ({ parent }) => !parent?.linkType,
-        validation: Rule => Rule.custom(value => {
-          if (!value) return true; // allows null or undefined
-          if (value.startsWith('mailto:')) {
-            const email = value.substring(7);
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email) ? true : 'Please enter a valid email address after "mailto:"';
-          } else if (value.startsWith('tel:')) {
-            const tel = value.substring(4);
-            const telRegex = /^[+\d]?(?:[\d-.\s()]*)$/; // Simple regex to validate phone numbers
-            return telRegex.test(tel) ? true : 'Please enter a valid phone number after "tel:"';
-          } else {
-            const urlRegex = /^(http|https):\/\/[^ "]+$/;
-            return urlRegex.test(value) ? true : 'Please enter a valid URL.';
+      name: 'profileSettings',
+      title: 'Profile settings',
+      type: 'object',
+      fields: [
+        {
+          name: 'linkType',
+          title: 'Choose link type',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Phone', value: 'phone' },
+              { title: 'Homepage', value: 'homepage' },
+              { title: 'Email', value: 'email' },
+              { title: 'Booking System', value: 'bookingsystem' },
+              { title: 'Booking Request', value: 'bookingrequest' },
+            ],
+            layout: 'radio', // or 'dropdown'
           }
-        })
-      }),
+        },
+        {
+          name: 'buttonUrl',
+          title: 'URL, Tel, or Mailto:',
+          type: 'string',
+          description: 'Enter the web address, email address (add mailto:name@domain.com), or phone number (add tel:number)',
+          hidden: ({ parent }) => !parent?.linkType,
+          validation: Rule => Rule.custom(value => {
+            if (!value) return true; // allows null or undefined
+            if (value.startsWith('mailto:')) {
+              const email = value.substring(7);
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              return emailRegex.test(email) ? true : 'Please enter a valid email address after "mailto:"';
+            } else if (value.startsWith('tel:')) {
+              const tel = value.substring(4);
+              const telRegex = /^[+\d]?(?:[\d-.\s()]*)$/; // Simple regex to validate phone numbers
+              return telRegex.test(tel) ? true : 'Please enter a valid phone number after "tel:"';
+            } else {
+              const urlRegex = /^(http|https):\/\/[^ "]+$/;
+              return urlRegex.test(value) ? true : 'Please enter a valid URL.';
+            }
+          })
+        },
+        {
+          name: 'profileTemplate',
+          title: 'Profile Template',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Basic', value: 'basic'},
+              {title: 'Plus', value: 'plus'},
+              {title: 'Partner', value: 'partner'}
+            ]
+          }
+        },
+      ]
+    },
 
-      {
-        name: 'profileTemplate',
-        title: 'Profile Template',
-        type: 'string',
-        options: {
-          list: [
-            {title: 'Basic', value: 'basic'},
-            {title: 'Plus', value: 'plus'},
-            {title: 'Partner', value: 'partner'}
-          ]
-        }
-      },
-      {
-        name: 'responseTime',
-        title: 'Response Time',
-        description: 'Describe how long it usually takes for the customer to respond, e.g. 1-2 business days, weekdays only, within 1-3 hours',
-        type: 'string'
-      }
-    ]
-  },
   ]
 }
