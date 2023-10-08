@@ -174,6 +174,93 @@ export default {
         },
       ]
     },
-
+    {
+       name: 'image',
+       title: 'Image',
+       type: 'object',
+       fields: [
+         {
+           name: 'logo',
+           title: 'Company Logo',
+           type: 'image',
+           options: {
+             hotspot: true
+           },
+           fields: [
+             {
+               name: 'alt',
+               title: 'Alt Text',
+               type: 'string',
+               description: 'A description of the image for SEO and screen readers.',
+               validation: Rule => Rule.required().error('Alt text is required for accessibility and SEO.')
+             }
+           ]
+         },
+         {
+           name: 'header_image',
+           title: 'Header Image',
+           description: 'The image will be visible in e.g. search results etc.',
+           type: 'image',
+           options: {
+             hotspot: true
+           },
+           fields: [
+             {
+               name: 'alt',
+               title: 'Alt Text',
+               type: 'string',
+               description: 'A description of the image for SEO and screen readers.',
+               validation: Rule => Rule.required().error('Alt text is required for accessibility and SEO.')
+             }
+           ]
+         },
+         {
+           name: 'meta_image',
+           title: 'Meta Image',
+           description: 'Image for Google, Facebook, etc.',
+           type: 'image',
+           options: {
+             hotspot: true
+           },
+           fields: [
+             {
+               name: 'alt',
+               title: 'Alt Text',
+               type: 'string',
+               description: 'A description of the image for SEO and screen readers.',
+               validation: Rule => Rule.required().error('Alt text is required for accessibility and SEO.')
+             }
+           ]
+         },
+         {
+           name: 'gallery',
+           title: 'Gallery',
+           description: 'Image gallery for profile page.',
+           type: 'array',
+           of: [
+             {
+               type: 'image',
+               options: {
+                 hotspot: true
+               },
+               fields: [
+                 {
+                   name: 'caption',
+                   title: 'Caption',
+                   type: 'string'
+                 },
+                 {
+                   name: 'alt',
+                   title: 'Alt Text',
+                   type: 'string',
+                   description: 'A description of the image for SEO and screen readers.',
+                   validation: Rule => Rule.required().error('Alt text is required for accessibility and SEO.')
+                 }
+               ]
+             }
+           ]
+         }
+       ]
+     },
   ]
 }
