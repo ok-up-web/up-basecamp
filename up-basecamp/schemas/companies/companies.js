@@ -1,12 +1,48 @@
 export default {
-  name: 'rentalCompanies',
-  title: 'Rental Companies',
+  name: 'companies',
+  title: 'Companies',
   type: 'document',
   fields: [
     {
       name: 'name',
       title: 'Name',
       type: 'string',
+    },
+    {
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 200,
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/ä/g, 'a')
+            .replace(/å/g, 'a')
+            .replace(/ö/g, 'o')
+            .slice(0, 200)
+      },
+      validation: (Rule) => Rule.required()
+    },
+    {
+      name: 'is_verified',
+      title: 'Verified',
+      type: 'boolean',
+      description: 'The checkbox is marked if the profile is verified by Upptäkke.'
+    },
+    {
+      name: 'is_plus_customer',
+      title: 'Paying client',
+      type: 'boolean',
+      description: 'The checkbox is selected if the profile is a plus customer.'
+    },
+    {
+      name: 'highlightProfile',
+      type: 'boolean',
+      title: 'Highlight profile',
+      description:
+        'The checkbox is opt if the profile is to be marked as a highlighted profile in search, articles and frontpage'
     },
     {
       name: 'operations',
@@ -47,7 +83,7 @@ export default {
       type: 'object',
       fields: [
         {name: 'facebook', title: 'Facebook', type: 'url'},
-        {name: 'instagram', title: 'Instagram', type: 'string'},
+        {name: 'instagram', title: 'Instagram', type: 'string', description: 'username'},
         {name: 'youtube', title: 'YouTube', type: 'url'},
       ]
     },
@@ -57,8 +93,6 @@ export default {
       type: 'object',
       fields: [
         {name: 'geopoint', title: 'Geopoint', type: 'geopoint'},
-        {name: 'directions', title: 'Directions', type: 'text'},
-        {name: 'nearby', title: 'Nearby Attractions', type: 'text'},
       ]
     },
     {
@@ -73,7 +107,80 @@ export default {
           type: 'array',
           of: [{type: 'block'}],
         },
+        {name: 'directions', title: 'Directions',
+        type: 'text',
+        description: 'Describe how the customer gets to the location by car or train, etc.',
+        },
+        {name: 'nearby',
+        title: 'Nearby Attractions',
+        type: 'text',
+        title: 'Tips on activities and experiences nearby',
+        },
       ]
     },
+    {
+    name: 'profileSettings',
+    title: 'Profile settings',
+    type: 'object',
+    fields: [
+      defineField({
+        name: 'linkType',
+        title: 'Choose link type',
+        type: 'string',
+        options: {
+          list: [
+            { title: 'Phone', value: 'phone' },
+            { title: 'Homepage', value: 'homepage' },
+            { title: 'Email', value: 'email' },
+            { title: 'Booking System', value: 'bookingsystem' },
+            { title: 'Booking Request', value: 'bookingrequest' },
+          ],
+          layout: 'radio', // or 'dropdown'
+        }
+      }),
+
+      defineField({
+        name: 'buttonUrl',
+        title: 'URL, Tel, or Mailto:',
+        type: 'string',
+        description: 'Enter the web address, email address (add mailto:name@domain.com), or phone number (add tel:number)',
+        hidden: ({ parent }) => !parent?.linkType,
+        validation: Rule => Rule.custom(value => {
+          if (!value) return true; // allows null or undefined
+          if (value.startsWith('mailto:')) {
+            const email = value.substring(7);
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email) ? true : 'Please enter a valid email address after "mailto:"';
+          } else if (value.startsWith('tel:')) {
+            const tel = value.substring(4);
+            const telRegex = /^[+\d]?(?:[\d-.\s()]*)$/; // Simple regex to validate phone numbers
+            return telRegex.test(tel) ? true : 'Please enter a valid phone number after "tel:"';
+          } else {
+            const urlRegex = /^(http|https):\/\/[^ "]+$/;
+            return urlRegex.test(value) ? true : 'Please enter a valid URL.';
+          }
+        })
+      }),
+
+      {
+        name: 'profileTemplate',
+        title: 'Profile Template',
+        type: 'string',
+        options: {
+          list: [
+            {title: 'Basic', value: 'basic'},
+            {title: 'Plus', value: 'plus'},
+            {title: 'Partner', value: 'partner'}
+          ]
+        }
+      },
+      {
+        name: 'responseTime',
+        title: 'Response Time',
+        description: 'Describe how long it usually takes for the customer to respond, e.g. 1-2 business days, weekdays only, within 1-3 hours',
+        type: 'string'
+      }
+    ]
+  },
   ]
 }
