@@ -1,6 +1,6 @@
 export default{
     name: 'businessChain',
-    title: 'business chain',
+    title: 'Business chain',
     type: 'document',
     fields: [
       {
