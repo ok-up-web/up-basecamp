@@ -105,6 +105,38 @@ export default {
       ]
     },
     {
+    name: 'equipment',
+    title: 'Equipment for rentals',
+    type: 'object',
+    fields: [
+      {
+        name: 'mainEquipmentCategories',
+        title: 'Main categories',
+        type: 'array',
+        of: [
+          {
+            type: 'reference',
+            to: [{type: 'mainEquipmentCategory'}],
+          }
+        ],
+        description: 'Add equipment main categories',
+      },
+      {
+        name: 'subEquipmentCategories',
+        title: 'Sub categories',
+        type: 'array',
+        of: [
+          {
+            type: 'reference',
+            to: [{type: 'subEquipmentCategory'}],
+          }
+        ],
+        description: 'Add equipment sub categories',
+      },
+    ]
+  },
+
+    {
       name: 'description',
       title: 'Description',
       type: 'object',
