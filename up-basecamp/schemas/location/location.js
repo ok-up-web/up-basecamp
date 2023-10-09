@@ -119,72 +119,7 @@ export default{
             ]
     },
 
-    {
-      name: 'featuredArticle',
-      title: 'Featured Article',
-      type: 'reference',
-      to: [
-        {
-          type: 'article'
-        }
-      ]
-    },
-
-
-    {
-      name: 'additionalArticles',
-      title: 'Additional Articles',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [
-            {
-              type: 'article'
-            }
-          ]
-        }
-      ],
-      validation: Rule => Rule.max(3) // Maximalt 3 artiklar
-    },
-    {
-      name: 'searchPhrase',
-      title: 'Search Phrase',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'searchPhrase' }],
-        },
-      ],
-    },
-
-{
-  name: 'featuredSearchPhrases',
-  title: 'Featured Search Phrases',
-  type: 'object',
-  fields: [
-    {
-      name: 'headline',
-      title: 'Headline for Search Phrases',
-      type: 'string',
-
-    },
-    {
-      name: 'searchPhrase',
-      title: 'Search Phrase',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'searchPhrase' }],
-        },
-      ],
-    },
-  ],
-
-},
-
+   
       {
 
             'name': 'metaBlock',
@@ -214,4 +149,3 @@ export default{
       }
     ],
   }
-  
