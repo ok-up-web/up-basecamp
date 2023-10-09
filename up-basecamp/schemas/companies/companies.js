@@ -98,16 +98,26 @@ export default {
    {
      name: 'accommodationDetails',
      title: 'Accommodation Details',
-     type: 'object',
+     type: 'array',
      hidden: ({ parent }) => !parent?.accommodation,  // Dölj om 'accommodation' är falsk
-     // ...fler fält...
+     of: [
+       {
+         type: 'reference',
+         to: [{ type: 'accommodation' }]
+       }
+     ],
    },
    {
      name: 'activityDetails',
      title: 'Activity Details',
-     type: 'object',
+     type: 'array',
      hidden: ({ parent }) => !parent?.activity,  // Dölj om 'activity' är falsk
-     // ...fler fält...
+     of: [
+       {
+         type: 'reference',
+         to: [{ type: 'activity' }]
+       }
+     ],
    },
       ]
     },
