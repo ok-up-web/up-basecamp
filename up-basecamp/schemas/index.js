@@ -4,7 +4,7 @@ import mainEquipmentCategory from './equipment/mainEquipmentCategory'
 import subEquipmentCategory from './equipment/subEquipmentCategory'
 
 import landscapeAttribute from './attributes/landscapeAttribute'
-import facilityAttribute from '.attributes/facilityAttribute'
+import facilityAttribute from './attributes/facilityAttribute'
 
 
 import region from './location/region'
