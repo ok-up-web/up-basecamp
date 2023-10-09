@@ -6,6 +6,7 @@ import subEquipmentCategory from './equipment/subEquipmentCategory'
 import landscapeAttribute from './attributes/landscapeAttribute'
 import facilityAttribute from './attributes/facilityAttribute'
 
+import activity from './activity/activity'
 
 import region from './location/region'
 import province from './location/province'
@@ -16,10 +17,11 @@ import location from './location/location.js'
 
 export const schemaTypes = [
 companies,
-landscapeAttribute,
-facilityAttribute,
 mainEquipmentCategory,
 subEquipmentCategory,
+landscapeAttribute,
+facilityAttribute,
+activity,
 region,
 province,
 county,
