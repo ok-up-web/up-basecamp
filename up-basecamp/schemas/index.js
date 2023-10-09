@@ -3,7 +3,7 @@ import companies from './companies/companies'
 
 import region from './location/region'
 import province from './location/province'
-import county from './county'
+import county from './location/county'
 import municipality from './location/municipality'
 import location from './location/location.js'
 
