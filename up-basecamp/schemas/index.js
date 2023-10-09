@@ -1,4 +1,5 @@
 import companies from './companies/companies'
+import businessChain from './businessChain/businessChain'
 
 import mainEquipmentCategory from './equipment/mainEquipmentCategory'
 import subEquipmentCategory from './equipment/subEquipmentCategory'
@@ -17,6 +18,7 @@ import location from './location/location.js'
 
 export const schemaTypes = [
 companies,
+businessChain,
 mainEquipmentCategory,
 subEquipmentCategory,
 landscapeAttribute,
