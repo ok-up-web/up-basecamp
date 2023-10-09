@@ -1,6 +1,6 @@
 import companies from './companies/companies'
 
-import mainEquipmentCategory from './equipment/subEquipmentCategory'
+import mainEquipmentCategory from './equipment/mainEquipmentCategory'
 import subEquipmentCategory from './equipment/subEquipmentCategory'
 
 import region from './location/region'
