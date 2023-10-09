@@ -7,6 +7,7 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: Rule => Rule.required().error('Location is required before publishing'),
     },
     {
       name: 'slug',
@@ -92,13 +93,15 @@ export default {
       title: 'Location',
       type: 'object',
       fields: [
-        {name: 'geopoint', title: 'Geopoint', type: 'geopoint'},
         {
           name: 'location',
-          title: 'Location',
+          title: 'City/town',
           type: 'reference',
           to: [{type: 'location'}],
+          description: 'Add the city/town where the business is located',
+          validation: Rule => Rule.required().error('Location is required before publishing'),
         },
+        {name: 'geopoint', title: 'Geopoint', type: 'geopoint'}
       ]
     },
     {
