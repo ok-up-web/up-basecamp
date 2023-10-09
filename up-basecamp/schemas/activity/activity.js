@@ -1,6 +1,6 @@
 export default{
-    name: 'activityCategory',
-    title: 'Activity category',
+    name: 'activity',
+    title: 'Activity',
     type: 'document',
     fields: [
       {
