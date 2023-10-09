@@ -1,5 +1,6 @@
 import companies from './companies/companies'
 
+import equipment from './equipment/equipment'
 
 import region from './location/region'
 import province from './location/province'
@@ -10,6 +11,7 @@ import location from './location/location.js'
 
 export const schemaTypes = [
 companies,
+equipment,
 region,
 province,
 county,
