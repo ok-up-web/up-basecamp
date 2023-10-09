@@ -7,7 +7,7 @@ import landscapeAttribute from './attributes/landscapeAttribute'
 import facilityAttribute from './attributes/facilityAttribute'
 
 import activity from './activity/activity'
-
+import accommodation from './accommodation/accommodation'
 import region from './location/region'
 import province from './location/province'
 import county from './location/county'
@@ -22,6 +22,7 @@ subEquipmentCategory,
 landscapeAttribute,
 facilityAttribute,
 activity,
+accommodation,
 region,
 province,
 county,
