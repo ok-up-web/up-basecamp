@@ -53,9 +53,67 @@ export default {
         layout: 'checkbox',
       },
       fields: [
-        {name: 'rental', title: 'Rental', type: 'boolean'},
-        {name: 'accommodation', title: 'Accommodation', type: 'boolean'},
-        {name: 'activity', title: 'Activity', type: 'boolean'},
+        {
+         name: 'rental',
+         title: 'Rental',
+         type: 'boolean'
+       },
+       {
+         name: 'accommodation',
+         title: 'Accommodation',
+         type: 'boolean'
+       },
+       {
+         name: 'activity',
+         title: 'Activity',
+         type: 'boolean'
+       },
+       {
+         name: 'equipment',
+         title: 'Equipment for rentals',
+         type: 'object',
+         hidden: ({ parent }) => !parent?.rental,  // Dölj om 'rental' är falsk
+         fields: [
+           {
+             name: 'mainEquipmentCategories',
+             title: 'Main categories',
+             type: 'array',
+             of: [
+               {
+                 type: 'reference',
+                 to: [{ type: 'mainEquipmentCategory' }]
+               }
+             ],
+             description: 'Add equipment main categories',
+           },
+           {
+             name: 'subEquipmentCategories',
+             title: 'Sub categories',
+             type: 'array',
+             of: [
+               {
+                 type: 'reference',
+                 to: [{ type: 'subEquipmentCategory' }]
+               }
+             ],
+             description: 'Add equipment sub categories',
+           },
+         ]
+       },
+       {
+         name: 'accommodationDetails',
+         title: 'Accommodation Details',
+         type: 'object',
+         hidden: ({ parent }) => !parent?.accommodation,  // Dölj om 'accommodation' är falsk
+         // ...fler fält...
+       },
+       {
+         name: 'activityDetails',
+         title: 'Activity Details',
+         type: 'object',
+         hidden: ({ parent }) => !parent?.activity,  // Dölj om 'activity' är falsk
+         // ...fler fält...
+       },
       ]
     },
     {
