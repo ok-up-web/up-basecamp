@@ -93,6 +93,12 @@ export default {
       type: 'object',
       fields: [
         {name: 'geopoint', title: 'Geopoint', type: 'geopoint'},
+        {
+          name: 'location',
+          title: 'Location',
+          type: 'reference',
+          to: [{type: 'location'}],
+        },
       ]
     },
     {
