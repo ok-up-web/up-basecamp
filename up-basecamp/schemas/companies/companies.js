@@ -59,68 +59,80 @@
         ]
       },
       {
-        name: 'categories',
-        title: 'Categories',
-        type: 'object',
-        fields: [
-          {
-       name: 'equipment',
-       title: 'Equipment for rentals',
-       type: 'object',
-       hidden: ({ parent }) => !parent?.parent?.rental,  // Dölj om 'rental' är falsk
-       fields: [
-         {
-           name: 'mainEquipmentCategories',
-           title: 'Main categories',
-           type: 'array',
-           of: [
-             {
-               type: 'reference',
-               to: [{ type: 'mainEquipmentCategory' }]
-             }
-           ],
-           description: 'Add equipment main categories',
-         },
-         {
-           name: 'subEquipmentCategories',
-           title: 'Sub categories',
-           type: 'array',
-           of: [
-             {
-               type: 'reference',
-               to: [{ type: 'subEquipmentCategory' }]
-             }
-           ],
-           description: 'Add equipment sub categories',
-         },
-       ]
-     },
-     {
-       name: 'accommodationDetails',
-       title: 'Accommodation Details',
-       type: 'array',
-       hidden: ({ parent }) => !parent?.parent?.accommodation,  // Dölj om 'accommodation' är falsk
-       of: [
-         {
-           type: 'reference',
-           to: [{ type: 'accommodation' }]
-         }
-       ],
-     },
-     {
-       name: 'activityDetails',
-       title: 'Activity Details',
-       type: 'array',
-       hidden: ({ parent }) => !parent?.parent?.activity,  // Dölj om 'activity' är falsk
-       of: [
-         {
-           type: 'reference',
-           to: [{ type: 'activity' }]
-         }
-       ],
-     },
-        ]
-      },
+      name: 'categories',
+      title: 'Categories',
+      type: 'object',
+      fields: [
+        {
+          name: 'equipment',
+          title: 'Equipment',
+          type: 'object',
+          fields: [
+            {
+              name: 'mainEquipmentCategories',
+              title: 'Main categories',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'mainEquipmentCategory' }]
+                }
+              ],
+              description: 'Add equipment main categories',
+            },
+            {
+              name: 'subEquipmentCategories',
+              title: 'Sub categories',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'subEquipmentCategory' }]
+                }
+              ],
+              description: 'Add equipment sub categories',
+            },
+          ]
+        },
+        {
+          name: 'accommodation',
+          title: 'Accommodation',
+          type: 'object',
+          fields: [
+            {
+              name: 'accommodationDetails',
+              title: 'Accommodation Details',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'accommodation' }]
+                }
+              ],
+            },
+          ]
+        },
+        {
+          name: 'activity',
+          title: 'Activity',
+          type: 'object',
+          fields: [
+            {
+              name: 'activityDetails',
+              title: 'Activity Details',
+              type: 'array',
+              of: [
+                {
+                  type: 'reference',
+                  to: [{ type: 'activity' }]
+                }
+              ],
+            },
+          ]
+        },
+      ]
+    },
+
       {
         name: 'address',
         title: 'Address',
