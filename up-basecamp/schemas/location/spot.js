@@ -1,6 +1,6 @@
 export default{
-    name: 'location',
-    title: 'Location',
+    name: 'spot',
+    title: 'Spot',
     type: 'document',
     fields: [
       {
@@ -26,44 +26,33 @@ export default{
         validation: (Rule) => Rule.required(),
       },
       {
-        title: 'Location',
-        name: 'location',
+        title: 'Geopoint',
+        name: 'geopoint',
         type: 'geopoint'
       },
       {
-        name: 'lat',
-        type: 'number',
-        title: 'Latitude',
-      },
-      {
-        name: 'long',
-        type: 'number',
-        title: 'Longitude',
-      },
-      {
-        name: 'isResidence',
-        type: 'boolean',
-        title: 'Is residence',
-      },
-      {
-        name: 'municipality',
+        name: 'location',
         type: 'reference',
-        to: [{type: 'municipality'}],
-        title: 'Municipality',
+        to: [{type: 'location'}],
+        title: 'Location',
         weak: true
+      },
+      {
+        name: 'profiles',
+        type: 'reference',
+        to: [{type: 'profile'}],
+        title: 'Add profiles',
       },
       {
         name: 'description',
         title: 'Description',
         type: 'text',
-
       },
       {
         name: 'localeDescription',
         title: 'Description translations',
         type: 'localeText'
       },
-
       {
         name: 'featured_articles',
         title: 'Link to featured articles',
@@ -77,21 +66,6 @@ export default{
           }
         ]
       },
-          {
-            name: 'lake',
-            type: 'string',
-            title: 'Lakes',
-          },
-          {
-            name: 'road',
-            type: 'string',
-            title: 'Roads',
-          },
-          {
-            name: 'naturereserve',
-            type: 'string',
-            title: 'Naturereserve',
-          },
 
           {
             name: 'image',

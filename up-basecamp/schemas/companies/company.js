@@ -1,10 +1,16 @@
   export default {
-    name: 'companies',
-    title: 'Companies',
+    name: 'company',
+    title: 'Company',
     type: 'document',
     fields: [
       {
         name: 'name',
+        title: 'Name',
+        type: 'string',
+        validation: Rule => Rule.required().error('Name is required before publishing'),
+      },
+      {
+        name: 'name_en',
         title: 'Name',
         type: 'string',
         validation: Rule => Rule.required().error('Location is required before publishing'),
@@ -27,23 +33,16 @@
         validation: (Rule) => Rule.required()
       },
       {
+        name: 'businessChain',
+        type: 'reference',
+        to: [{type: 'businessChain'}],
+        title: 'Business chain'
+      },
+      {
         name: 'is_verified',
         title: 'Verified',
         type: 'boolean',
         description: 'The checkbox is marked if the profile is verified by Upptäkke.'
-      },
-      {
-        name: 'is_plus_customer',
-        title: 'Paying client',
-        type: 'boolean',
-        description: 'The checkbox is selected if the profile is a plus customer.'
-      },
-      {
-        name: 'highlightProfile',
-        type: 'boolean',
-        title: 'Highlight profile',
-        description:
-          'The checkbox is opt if the profile is to be marked as a highlighted profile in search, articles and frontpage'
       },
       {
         name: 'operations',
@@ -375,7 +374,96 @@
                  ]
                }
              ]
-           }
+           },
+           {
+             name: 'featured_articles',
+             title: 'Link to featured articles',
+             type: 'array',
+             of: [
+               {
+                 type: 'reference',
+                 to: {
+                   type: 'article'
+                 }
+               }
+             ]
+           },
+           {
+             name: 'featured_checklists',
+             title: 'Link to featured checklists',
+             type: 'array',
+             of: [
+               {
+                 type: 'reference',
+                 to: {
+                   type: 'checklist'
+                 }
+               }
+             ]
+           },
+           {
+  name: 'opening_hours',
+  title: 'Opening hours',
+  type: 'object',
+  fields: [
+    {
+      name: 'seasonalAvailability',
+      title: 'Seasonal availability',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Året runt', value: 'Året runt'},
+          {title: 'Sommar', value: 'Sommar'},
+          {title: 'Vinter', value: 'Vinter'},
+          {title: 'Endast helger', value: 'Endast helger'},
+          {title: 'Vid förfrågan', value: 'Vid förfrågan'}
+        ]
+      }
+    },
+    {
+      name: 'monday',
+      title: 'Monday',
+      type: 'string',
+      description: 'Opening hours for monday.'
+    },
+    {
+      name: 'tuesday',
+      title: 'Tuesday',
+      type: 'string',
+      description: 'Opening hours for tuesday.'
+    },
+    {
+      name: 'wednesday',
+      title: 'Wednesday',
+      type: 'string',
+      description: 'Opening hours for wednesday.'
+    },
+    {
+      name: 'thursday',
+      title: 'Thursday',
+      type: 'string',
+      description: 'Opening hours for Thursday.'
+    },
+    {
+      name: 'friday',
+      title: 'Friday',
+      type: 'string',
+      description: 'Opening hours for friday.'
+    },
+    {
+      name: 'saturday',
+      title: 'Saturday',
+      type: 'string',
+      description: 'Opening hours for saturday.'
+    },
+    {
+      name: 'sunday',
+      title: 'Sunday',
+      type: 'string',
+      description: 'Opening hours for sunday.'
+    }
+  ]
+},
          ]
        },
     ]

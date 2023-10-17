@@ -7,6 +7,11 @@ export default {
         name: 'namne',
         title: 'Name',
         type: 'string'
-      }
+      },
+      {
+        name: 'localeNeme',
+        title: 'Name translations',
+        type: 'localeString'
+      },
     ]
   }

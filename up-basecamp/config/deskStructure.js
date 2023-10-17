@@ -21,10 +21,80 @@ export const myStructure = (S) =>
           S.list()
             .title('Companies')
             .items([
-              S.documentTypeListItem('companies').icon(CaseIcon).title('Companies'),
+              S.documentTypeListItem('company').icon(CaseIcon).title('Company'),
+              S.documentTypeListItem('profile').icon(CaseIcon).title('Profile'),
               S.documentTypeListItem('businessChain').icon(CaseIcon).title('Business Chain'),
             ])
         ),
+
+// articles
+S.listItem()
+      .title('Articles')
+      .child(
+        S.list()
+          .title('Articles')
+          .items([
+
+            S.listItem()
+              .title('Articles')
+              .child(
+                S.documentTypeList('article')
+                  .title('Article')
+                  .child((documentId) =>
+                    S.document()
+                      .documentId(documentId)
+                      .schemaType('article')
+                  )
+              ),
+            S.listItem()
+              .title('Author')
+              .child(
+                S.documentTypeList('author')
+                  .title('Author')
+                  .child((documentId) =>
+                    S.document()
+                      .documentId(documentId)
+                      .schemaType('author')
+                  )
+              ),
+            S.listItem()
+              .title('Tags')
+              .child(
+                S.documentTypeList('tag')
+                  .title('Tags')
+                  .child((documentId) =>
+                    S.document()
+                      .documentId(documentId)
+                      .schemaType('tag')
+                  )
+              ),
+            S.listItem()
+              .title('Categories')
+              .child(
+                S.documentTypeList('category')
+                  .title('Category')
+                  .child((documentId) =>
+                    S.document()
+                      .documentId(documentId)
+                      .schemaType('category')
+                  )
+              ),
+              //singletonListItem(S, "articleFrontpage", "Article Frontpage")
+          ])
+      ),
+
+// Checklists
+        S.listItem()
+          .title('Checklists')
+          .icon(CaseIcon)
+          .child(
+            S.list()
+              .title('Checklists')
+              .items([
+                S.documentTypeListItem('checklist').icon(CaseIcon).title('Checklist'),
+                S.documentTypeListItem('items').icon(CaseIcon).title('Items'),
+              ])
+          ),
 
       // Location List Item
       S.listItem()
@@ -39,6 +109,7 @@ export const myStructure = (S) =>
               S.documentTypeListItem('county').icon(PinIcon).title('County'),
               S.documentTypeListItem('municipality').icon(PinIcon).title('Municipality'),
               S.documentTypeListItem('location').icon(PinIcon).title('Location'),
+                  S.documentTypeListItem('spot').icon(PinIcon).title('Spot'),
             ])
         ),
 
@@ -87,4 +158,16 @@ export const myStructure = (S) =>
                 ),
             ])
         ),
+
+        //kiosk
+        S.listItem()
+          .title('Kiosk')
+          .icon(CaseIcon)
+          .child(
+            S.list()
+              .title('Kiosk')
+              .items([
+                S.documentTypeListItem('kioskUser').icon(CaseIcon).title('Kiosk user'),
+              ])
+          ),
     ]);

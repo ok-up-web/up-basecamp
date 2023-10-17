@@ -1,5 +1,7 @@
-import companies from './companies/companies'
-import businessChain from './businessChain/businessChain'
+
+import company from './companies/company'
+import businessChain from './companies/businessChain'
+
 
 import mainEquipmentCategory from './equipment/mainEquipmentCategory'
 import subEquipmentCategory from './equipment/subEquipmentCategory'
@@ -15,9 +17,33 @@ import county from './location/county'
 import municipality from './location/municipality'
 import location from './location/location.js'
 
+import kioskUser from './kiosk/kioskUser'
+
+import companyBlock from './blocks/companyBlock'
+import activityBlock from './blocks/activityBlock'
+import checklistBlock from './blocks/checklistBlock'
+import articleBlock from './blocks/articleBlock'
+
+import checklist from './checklists/checklist'
+import items from './checklists/items'
+
+import author from './articles/author'
+import tag from './articles/tag'
+import category from './articles/category'
+import article from './articles/article'
+
+import profile from './companies/profile'
+
+import { localeString } from './localeString';
+import { localeText } from './localeText';
+
+import locationBlock from './blocks/locationBlock'
+import spotBlock from './blocks/spotBlock'
+
+import spot from './location/spot'
 
 export const schemaTypes = [
-companies,
+company,
 businessChain,
 mainEquipmentCategory,
 subEquipmentCategory,
@@ -29,5 +55,22 @@ region,
 province,
 county,
 municipality,
-location
+location,
+kioskUser,
+companyBlock,
+activityBlock,
+checklistBlock,
+articleBlock,
+checklist,
+items,
+author,
+tag,
+category,
+article,
+profile,
+localeString,
+localeText,
+locationBlock,
+spotBlock,
+spot
 ]

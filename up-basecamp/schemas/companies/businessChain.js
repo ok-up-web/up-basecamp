@@ -1,14 +1,17 @@
 export default {
-  name: 'activity',
-  title: 'Activity',
+  name: 'businessChain',
+  title: 'Business chain',
   type: 'document',
   fields: [
-    {
-      name: 'name',
-      title: 'name',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
+
+        {
+          name: 'name',
+          title: 'Name',
+          type: 'string',
+          validation: Rule => Rule.required()
+        },
+
+
     {
       name: 'slug',
       title: 'Slug (Swedish)',
@@ -28,7 +31,7 @@ export default {
     },
     {
       name: 'name_en',
-      title: 'Name (English)',
+      title: 'English',
       type: 'string',
     },
     {
@@ -50,13 +53,19 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
-
-    },
-    {
-      name: 'localeDescription',
-      title: 'Description translations',
-      type: 'localeText'
+      type: 'object',
+      fields: [
+        {
+          name: 'sv',
+          title: 'Swedish',
+          type: 'text',
+        },
+        {
+          name: 'en',
+          title: 'English',
+          type: 'text',
+        },
+      ]
     },
     {
       name: 'mainImage',
@@ -116,10 +125,10 @@ export default {
          }
        ]
      }
-   ],
-   preview: {
-     select: {
-       title: 'name'
-     }
-   }
-   }
+  ],
+  preview: {
+    select: {
+      title: 'name'
+    }
+  }
+}

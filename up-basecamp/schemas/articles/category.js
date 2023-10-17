@@ -1,6 +1,6 @@
 export default{
-    name: 'businessChain',
-    title: 'Business chain',
+    name: 'category',
+    title: 'Category',
     type: 'document',
     fields: [
       {
@@ -26,12 +26,6 @@ export default{
         validation: (Rule) => Rule.required(),
       },
       {
-        name: 'description',
-        title: 'Description',
-        type: 'text',
-
-      },
-      {
         name: 'mainImage',
         title: 'Main image',
         type: 'image',
@@ -40,10 +34,29 @@ export default{
         }
       },
       {
-        'name': 'seo',
-        'title': 'SEO',
-        'type': 'object',
-        'fields': [
+        name: 'featuredArticle',
+        title: 'Featured article for category',
+        type: 'reference',
+        to: [
+          {
+            type: 'article'
+          }
+        ]
+      },
+
+
+          {
+            name: 'selectedArticles',
+            title: 'Selected articles',
+            type: 'array',
+            of: [
+              {
+                type: 'reference',
+                to: [{ type: 'article' }],
+              },
+            ],
+          },
+ 
           {
             'name': 'metaBlock',
             'title': 'Meta settings',
@@ -69,7 +82,6 @@ export default{
               }
             ]
           }
-        ]
-      }
+
     ]
   }

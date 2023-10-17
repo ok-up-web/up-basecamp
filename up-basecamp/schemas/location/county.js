@@ -33,6 +33,11 @@ export default{
 
      },
      {
+       name: 'localeDescription',
+       title: 'Description translations',
+      type: 'localeText'
+     },
+     {
        name: 'mainImage',
        title: 'Main image',
        type: 'image',
@@ -47,39 +52,55 @@ export default{
        title: 'Province'
      },
      {
-       'name': 'seo',
-       'title': 'SEO',
+       'name': 'metaBlock',
+       'title': 'Meta settings',
        'type': 'object',
        'fields': [
          {
-           'name': 'metaBlock',
-           'title': 'Meta settings',
-           'type': 'object',
-           'fields': [
-             {
-               'name': 'title',
-               'title': 'Meta title',
-               'type': 'string',
-               'description': 'The title that appears in search engine results and in the browser window. Recommended length is 50-60 characters.'
-             },
-             {
-               'name': 'description',
-               'title': 'Meta description',
-               'type': 'text',
-               'description': 'The description that appears in search engine results below the title. Recommended length is 120-155 characters.'
-             },
-             {
-               'name': 'image',
-               'title': 'Meta Image',
-               'type': 'image',
-               'description': 'An image that appears in sharing previews on social media and in search engine results.'
-             }
-           ]
+           'name': 'title',
+           'title': 'Meta title',
+           'type': 'string',
+           'description': 'The title that appears in search engine results and in the browser window. Recommended length is 50-60 characters.'
+         },
+         {
+           'name': 'description',
+           'title': 'Meta description',
+           'type': 'text',
+           'description': 'The description that appears in search engine results below the title. Recommended length is 120-155 characters.'
+         },
+         {
+           'name': 'image',
+           'title': 'Meta Image',
+           'type': 'image',
+           'description': 'An image that appears in sharing previews on social media and in search engine results.'
          }
        ]
-     }
+     },
+     {
+          'name': 'metaBlock_en',
+          'title': 'Meta settings (English)',
+          'type': 'object',
+          'fields': [
+            {
+              'name': 'title',
+              'title': 'Meta title',
+              'type': 'string',
+              'description': 'The title that appears in search engine results and in the browser window. Recommended length is 50-60 characters.'
+            },
+            {
+              'name': 'description',
+              'title': 'Meta description',
+              'type': 'text',
+              'description': 'The description that appears in search engine results below the title. Recommended length is 120-155 characters.'
+            },
+            {
+              'name': 'image',
+              'title': 'Meta Image',
+              'type': 'image',
+              'description': 'An image that appears in sharing previews on social media and in search engine results.'
+            }
+          ]
+        }
    ],
 
  }
-
-  
