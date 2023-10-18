@@ -116,7 +116,7 @@ export default {
       type: 'array',
       title: 'Page builder',
       of: [
-        { type: 'companyBlock' },
+        { type: 'profileBlock' },
         { type: 'activityBlock' },
         { type: 'articleBlock' },
         { type: 'checklistBlock' },

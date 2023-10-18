@@ -19,7 +19,7 @@ import location from './location/location.js'
 
 import kioskUser from './kiosk/kioskUser'
 
-import companyBlock from './blocks/companyBlock'
+import profileBlock from './blocks/profileBlock'
 import activityBlock from './blocks/activityBlock'
 import checklistBlock from './blocks/checklistBlock'
 import articleBlock from './blocks/articleBlock'
@@ -57,7 +57,7 @@ county,
 municipality,
 location,
 kioskUser,
-companyBlock,
+profileBlock,
 activityBlock,
 checklistBlock,
 articleBlock,

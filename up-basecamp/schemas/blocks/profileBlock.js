@@ -1,7 +1,7 @@
 export default {
-  name: 'companyBlock',
+  name: 'profileBlock',
   type: 'object',
-  title: 'Company block',
+  title: 'Profile block',
   fields: [
     {
       name: 'title',
@@ -41,7 +41,7 @@ export default {
       ]
     },
     {
-      name: 'companies',
+      name: 'profiles',
       type: 'array',
       title: 'Add company',
       of: [
