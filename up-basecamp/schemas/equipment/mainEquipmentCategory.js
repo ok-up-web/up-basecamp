@@ -9,6 +9,7 @@ export default {
       type: 'string',
       validation: Rule => Rule.required()
     },
+
     {
       name: 'Slug',
       type: 'slug',
@@ -26,14 +27,8 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'name_en',
-      title: 'Name (English)',
-      type: 'string',
-    },
-    {
-      name: 'slug_en',
-      title: 'Slug (English)',
-      type: 'slug',
+      name: 'Slug',
+      type: 'slug_en',
       options: {
         source: 'name_en',
         maxLength: 200,
@@ -45,6 +40,7 @@ export default {
                              .replace(/ö/g, 'o')
                              .slice(0, 200)
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
