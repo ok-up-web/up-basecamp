@@ -34,7 +34,8 @@ export default{
 
       {
         name: 'slug_en',
-        type: 'slug (English)',
+        title: 'Slug (English)',
+        type: 'slug',
         options: {
           source: 'name_en',
           maxLength: 200,
