@@ -30,9 +30,7 @@ export default {
       name: 'name_en',
       title: 'Name (English)',
       type: 'string',
-      validation: Rule => Rule.required()
     },
-
     {
       name: 'slug_en',
       title: 'Slug (English)',
@@ -48,7 +46,6 @@ export default {
                              .replace(/ö/g, 'o')
                              .slice(0, 200)
       },
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
