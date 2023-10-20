@@ -43,15 +43,34 @@ export default {
     },
     {
       name: 'articles',
-      type: 'array',
       title: 'Add articles',
-      of: [
+      type: 'object',
+      fields: [
         {
-          type: 'reference',
-          to: [{ type: 'article' }],
+          name: 'sv',
+          title: 'Swedish',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'article' }],
+            },
+          ],
+        },
+        {
+          name: 'en',
+          title: 'English',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'article' }],
+            },
+          ],
         },
       ],
-    },
+    }
+
   ],
   preview: {
     select: {
