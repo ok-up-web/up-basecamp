@@ -12,6 +12,7 @@ export default{
       {
         name: 'slug',
         type: 'slug',
+            title: 'Slug'',
         options: {
           source: 'name',
           maxLength: 200,
@@ -33,9 +34,10 @@ export default{
       },
       {
         name: 'slug_en',
+            title: 'Slug (English)',
         type: 'slug',
         options: {
-          source: 'name',
+          source: 'name_en',
           maxLength: 200,
           slugify: input => input
                                .toLowerCase()

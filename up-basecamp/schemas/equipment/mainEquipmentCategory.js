@@ -32,8 +32,9 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'Slug',
-      type: 'slug_en',
+      name: 'slug_en',
+          title: 'Slug (English)',
+      type: 'slug',
       options: {
         source: 'name_en',
         maxLength: 200,
