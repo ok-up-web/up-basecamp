@@ -54,11 +54,6 @@ export default {
               type: 'string'
             },
             {
-              name: 'description',
-              title: 'Description',
-              type: 'text'
-            },
-            {
              name: 'slug',
              type: 'slug',
              options: {
@@ -73,6 +68,11 @@ export default {
                                 .slice(0, 200)
              },
              validation: (Rule) => Rule.required(),
+           },
+           {
+             name: 'description',
+             title: 'Description',
+             type: 'text'
            },
           ]
         },
