@@ -28,14 +28,14 @@ export default {
     },
     {
       name: 'name_en',
-      title: 'Name',
+      title: 'Name (English)',
       type: 'string',
       validation: Rule => Rule.required()
     },
 
     {
       name: 'slug_en',
-      type: 'slug',
+      type: 'slug (English)',
       options: {
         source: 'name_en',
         maxLength: 200,

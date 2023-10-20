@@ -26,6 +26,29 @@ export default{
         validation: (Rule) => Rule.required(),
       },
       {
+        name: 'name_en',
+        title: 'Name (English)',
+        type: 'string',
+        validation: Rule => Rule.required()
+      },
+
+      {
+        name: 'slug_en',
+        type: 'slug (English)',
+        options: {
+          source: 'name_en',
+          maxLength: 200,
+          slugify: input => input
+                               .toLowerCase()
+                               .replace(/\s+/g, '-')
+                               .replace(/ä/g, 'a')
+                               .replace(/å/g, 'a')
+                               .replace(/ö/g, 'o')
+                               .slice(0, 200)
+        },
+        validation: (Rule) => Rule.required(),
+      },
+      {
         name: 'category',
         title: 'Category',
 
