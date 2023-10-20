@@ -41,16 +41,35 @@ export default {
       ]
     },
     {
-      name: 'checklist',
-      type: 'array',
+      name: 'checklists',
       title: 'Add checklist',
-      of: [
+      type: 'object',
+      fields: [
         {
-          type: 'reference',
-          to: [{ type: 'checklist' }],
+          name: 'sv',
+          title: 'Swedish',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'checklist' }],
+            },
+          ],
+        },
+        {
+          name: 'en',
+          title: 'English',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'checklist' }],
+            },
+          ],
         },
       ],
-    },
+    }
+
   ],
   preview: {
     select: {
