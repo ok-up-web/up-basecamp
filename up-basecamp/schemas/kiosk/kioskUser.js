@@ -117,7 +117,6 @@ export default {
       title: 'Page builder',
       of: [
         { type: 'profileBlock' },
-        { type: 'activityBlock' },
         { type: 'articleBlock' },
         { type: 'checklistBlock' },
         { type: 'locationBlock' },

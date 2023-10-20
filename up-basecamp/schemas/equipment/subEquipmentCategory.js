@@ -26,6 +26,28 @@ export default{
         validation: (Rule) => Rule.required(),
       },
       {
+        name: 'name_en',
+        title: 'Name (English)',
+        type: 'string',
+        validation: Rule => Rule.required()
+      },
+      {
+        name: 'slug_en',
+        type: 'slug',
+        options: {
+          source: 'name',
+          maxLength: 200,
+          slugify: input => input
+                               .toLowerCase()
+                               .replace(/\s+/g, '-')
+                               .replace(/ä/g, 'a')
+                               .replace(/å/g, 'a')
+                               .replace(/ö/g, 'o')
+                               .slice(0, 200)
+        },
+        validation: (Rule) => Rule.required(),
+      },
+      {
         name: 'category',
         title: 'Category',
 
@@ -48,6 +70,11 @@ export default{
         type: 'text',
       },
       {
+        name: 'localeDescription',
+        title: 'Description translations',
+        type: 'localeText'
+      },
+      {
         name: 'mainImage',
         title: 'Main image',
         type: 'image',
@@ -55,46 +82,7 @@ export default{
           hotspot: true
         }
       },
-      {
-        name: 'translations',
-        title: 'Translations',
-        type: 'object',
-        fields: [
-          {
-            name: 'en',
-            title: 'English',
-            type: 'object',
-            fields: [
-              {
-                name: 'name',
-                title: 'Name',
-                type: 'string'
-              },
-              {
-                name: 'description',
-                title: 'Description',
-                type: 'text'
-              },
-              {
-               name: 'slug',
-               type: 'slug',
-               options: {
-                 source: 'translations.en.name',
-                 maxLength: 200,
-                 slugify: input => input
-                                  .toLowerCase()
-                                  .replace(/\s+/g, '-')
-                                  .replace(/ä/g, 'a')
-                                  .replace(/å/g, 'a')
-                                  .replace(/ö/g, 'o')
-                                  .slice(0, 200)
-               },
-               validation: (Rule) => Rule.required(),
-             },
-            ]
-          },
-        ]
-      },
+
       {
         'name': 'metaBlock',
         'title': 'Meta settings',
