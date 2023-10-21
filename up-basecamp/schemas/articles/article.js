@@ -32,6 +32,17 @@ export default {
         validation: Rule => Rule.required()
       },
       {
+        name: 'pageBuilder',
+        type: 'array',
+        title: 'Page builder',
+        of: [
+          { type: 'textBlock' },
+          { type: 'accordionBlock' },
+          { type: 'tableBlock' },
+          { type: 'mapBlock'},
+        ],
+      },
+      {
         name: 'body',
         title: 'Body',
         type: 'array',
@@ -88,7 +99,7 @@ export default {
                   hotspot: true
                 },
             },
- 
+
             ]
     },
       {

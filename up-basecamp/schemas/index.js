@@ -41,6 +41,12 @@ import spotBlock from './blocks/spotBlock'
 
 import spot from './location/spot'
 
+import accordionBlock from './blocks/accordionBlock'
+import tableBlock from './blocks/tableBlock'
+import textBlock from './blocks/textBlock'
+
+import mapBlock from './blocks/mapBlock'
+
 export const schemaTypes = [
 company,
 businessChain,
@@ -70,5 +76,9 @@ localeString,
 localeText,
 locationBlock,
 spotBlock,
-spot
+spot,
+accordionBlock,
+tableBlock,
+textBlock,
+mapBlock
 ]
