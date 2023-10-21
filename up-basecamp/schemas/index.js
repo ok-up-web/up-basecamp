@@ -45,7 +45,7 @@ import accordionBlock from './blocks/accordionBlock'
 import tableType from './blocks/tableBlock'
 import tableRowType from './blocks/tableBlock'
 import textBlock from './blocks/textBlock'
-import blockContent} from './blocks/textBlock'
+import blockContent from './blocks/textBlock'
 
 import mapBlock from './blocks/mapBlock'
 
