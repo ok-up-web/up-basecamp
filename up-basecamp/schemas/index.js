@@ -44,8 +44,7 @@ import spot from './location/spot'
 import accordionBlock from './blocks/accordionBlock'
 import tableBlock from './blocks/tableBlock'
 import tableRowType from './blocks/tableRowType'
-import textBlock from './blocks/textBlock'
-import blockContent from './blocks/textBlock'
+import { tableRowType, tableBlock } from './blocks/tableBlock';
 
 import mapBlock from './blocks/mapBlock'
 
