@@ -46,6 +46,7 @@ import tableBlock from './blocks/tableBlock'
 import textBlock from './blocks/textBlock'
 
 import mapBlock from './blocks/mapBlock'
+import blockContent from './blocks/blockContent'
 
 export const schemaTypes = [
 company,
@@ -80,5 +81,6 @@ spot,
 accordionBlock,
 tableBlock,
 textBlock,
-mapBlock
+mapBlock,
+blockContent
 ]
