@@ -39,7 +39,7 @@ export const tableBlock = {
   }
 };
 
-export const tableBlock = {
+export const tableRowType = {
   name: 'tableRowType',
   type: 'object',
   title: 'Table Row',
