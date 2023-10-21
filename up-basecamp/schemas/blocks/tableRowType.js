@@ -1,4 +1,4 @@
-export const tableRowType = {
+export default tableRowType = {
   name: 'tableRowType',
   type: 'object',
   title: 'Table Row',
