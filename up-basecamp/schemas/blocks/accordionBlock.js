@@ -1,5 +1,5 @@
 export default {
-  name: 'accordionSectionType',
+  name: 'accordionBlock',
   type: 'object',
   title: 'Accordion Section',
   fields: [
