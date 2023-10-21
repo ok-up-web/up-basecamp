@@ -117,12 +117,40 @@ export default {
       title: 'Page builder',
       of: [
         { type: 'profileBlock' },
-        { type: 'articleBlock' },
         { type: 'checklistBlock' },
         { type: 'locationBlock' },
         { type: 'spotBlock' },
       ],
     },
+    {
+      name: 'articles',
+      title: 'Add articles',
+      type: 'object',
+      fields: [
+        {
+          name: 'sv',
+          title: 'Swedish',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'article' }],
+            },
+          ],
+        },
+        {
+          name: 'en',
+          title: 'English',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'article' }],
+            },
+          ],
+        },
+      ],
+    }
   ],
   preview: {
     select: {
