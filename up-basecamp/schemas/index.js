@@ -42,7 +42,7 @@ import spotBlock from './blocks/spotBlock'
 import spot from './location/spot'
 
 import accordionBlock from './blocks/accordionBlock'
-import tableBlock from './blocks/tableBlock'
+import {tableType, tableRowType} from './blocks/tableBlock'
 import textBlock from './blocks/textBlock'
 
 import mapBlock from './blocks/mapBlock'
@@ -80,6 +80,7 @@ spotBlock,
 spot,
 accordionBlock,
 tableBlock,
+tableRowType,
 textBlock,
 mapBlock,
 blockContent
