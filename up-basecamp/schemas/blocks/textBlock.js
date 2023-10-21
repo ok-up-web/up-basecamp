@@ -1,4 +1,4 @@
-export default {
+export const textBlock {
   name: 'textBlock',
   type: 'object',
   title: 'Text Block',
