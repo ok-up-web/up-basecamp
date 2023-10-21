@@ -42,7 +42,7 @@ import spotBlock from './blocks/spotBlock'
 import spot from './location/spot'
 
 import accordionBlock from './blocks/accordionBlock'
-import tableType from './blocks/tableBlock'
+import tableBlock from './blocks/tableBlock'
 import tableRowType from './blocks/tableBlock'
 import textBlock from './blocks/textBlock'
 import blockContent from './blocks/textBlock'

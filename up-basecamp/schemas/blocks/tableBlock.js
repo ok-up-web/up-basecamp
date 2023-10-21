@@ -1,5 +1,5 @@
 export default {
-  name: 'tableType',
+  name: 'tableBlock',
   type: 'object',
   title: 'Table',
   fields: [
