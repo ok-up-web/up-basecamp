@@ -15,7 +15,7 @@ import region from './location/region'
 import province from './location/province'
 import county from './location/county'
 import municipality from './location/municipality'
-import location from './location/location.js'
+import location from './location/location'
 
 import kioskUser from './kiosk/kioskUser'
 
@@ -42,8 +42,10 @@ import spotBlock from './blocks/spotBlock'
 import spot from './location/spot'
 
 import accordionBlock from './blocks/accordionBlock'
-import {tableType, tableRowType} from './blocks/tableBlock'
-import {textBlock, blockContent} from './blocks/textBlock'
+import tableType from './blocks/tableBlock'
+import tableRowType from './blocks/tableBlock'
+import textBlock from './blocks/textBlock'
+import blockContent} from './blocks/textBlock'
 
 import mapBlock from './blocks/mapBlock'
 
