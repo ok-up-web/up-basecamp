@@ -80,6 +80,11 @@ export default{
                   hotspot: true
                 },
             },
+            {
+              name: 'panoramaImage',
+              title: 'Panorama image',
+              type: 'image',
+          },
           {
             name: 'gallery',
             title: 'Gallery',
