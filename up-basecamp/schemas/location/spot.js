@@ -76,6 +76,41 @@ export default{
           { type: 'tableBlock' },
         ],
       },
+      {
+  name: 'categorize',
+  title: 'Categorize',
+  type: 'object',
+  fields: [
+    {
+      name: 'facilityAttribute',
+      title: 'Facility attributes',
+      description: '',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'facilityAttribute'
+          }
+        }
+      ]
+    },
+    {
+      name: 'landscapeAttribute',
+      title: 'Landscape attributes',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'landscapeAttribute'
+          }
+        }
+      ]
+    }
+  ]
+},
+
           {
             name: 'image',
             title: 'Image',
