@@ -38,10 +38,10 @@ export default{
         weak: true
       },
       {
-        name: 'profiles',
-        type: 'reference',
-        to: [{type: 'profile'}],
-        title: 'Add profiles',
+          name: 'profiles',
+          type: 'array',
+          of: [{ type: 'reference', to: [{ type: 'profile' }] }],
+          title: 'Add profiles',
       },
       {
         name: 'description',
@@ -66,7 +66,16 @@ export default{
           }
         ]
       },
-
+      {
+        name: 'pageBuilder',
+        type: 'array',
+        title: 'Page builder',
+        of: [
+          { type: 'textBlock' },
+          { type: 'accordionBlock' },
+          { type: 'tableBlock' },
+        ],
+      },
           {
             name: 'image',
             title: 'Image',
