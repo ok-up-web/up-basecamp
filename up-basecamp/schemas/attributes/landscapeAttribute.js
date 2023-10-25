@@ -4,12 +4,12 @@ export default {
     type: 'document',
     fields: [
       {
-        name: 'namne',
+        name: 'name',
         title: 'Name',
         type: 'string'
       },
       {
-        name: 'localeNeme',
+        name: 'localeName',
         title: 'Name translations',
         type: 'localeString'
       },
