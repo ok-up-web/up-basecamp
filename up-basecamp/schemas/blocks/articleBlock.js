@@ -12,13 +12,11 @@ export default {
           name: 'sv',
           title: 'Swedish',
           type: 'string',
-          validation: Rule => Rule.required()
         },
         {
           name: 'en',
           title: 'English',
           type: 'string',
-          validation: Rule => Rule.required()
         },
 
       ]
