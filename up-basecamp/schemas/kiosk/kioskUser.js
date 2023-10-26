@@ -120,6 +120,7 @@ export default {
         { type: 'checklistBlock' },
         { type: 'locationBlock' },
         { type: 'spotBlock' },
+        { type: 'articleBlock' },
       ],
     },
     {
