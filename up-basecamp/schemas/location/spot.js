@@ -67,16 +67,6 @@ export default{
         ]
       },
       {
-        name: 'pageBuilder',
-        type: 'array',
-        title: 'Page builder',
-        of: [
-          { type: 'textBlock' },
-          { type: 'accordionBlock' },
-          { type: 'tableBlock' },
-        ],
-      },
-      {
   name: 'categorize',
   title: 'Categorize',
   type: 'object',
