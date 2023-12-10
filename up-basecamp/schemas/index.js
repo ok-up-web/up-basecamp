@@ -42,12 +42,18 @@ import spotBlock from './blocks/spotBlock'
 import spot from './location/spot'
 
 import accordionBlock from './blocks/accordionBlock'
-import { tableRowType, tableBlock } from './blocks/tableBlock';
+import { tableRowType, tableBlock } from './blocks/tableBlock'
 import { textBlock, blockContent } from './blocks/textBlock'
 
 
 import mapBlock from './blocks/mapBlock'
 
+import listBlock from './blocks/listBlock'
+import carouselBlock from './blocks/carouselBlock'
+import tabsBlock from './blocks/tabsBlock'
+import quoteBlock from './blocks/quoteBlock'
+
+import page from './pages/page'
 
 export const schemaTypes = [
 company,
@@ -85,4 +91,9 @@ tableRowType,
 textBlock,
 mapBlock,
 blockContent,
+listBlock,
+carouselBlock,
+tabsBlock,
+quoteBlock,
+page
 ]

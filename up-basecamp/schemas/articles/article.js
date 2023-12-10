@@ -40,6 +40,10 @@ export default {
           { type: 'accordionBlock' },
           { type: 'tableBlock' },
           { type: 'mapBlock'},
+          { type: 'carouselBlock'},
+          { type: 'listBlock'},
+          { type: 'quoteBlock'},
+          { type: 'tabsBlock'}
         ],
       },
       {
