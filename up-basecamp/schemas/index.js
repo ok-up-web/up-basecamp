@@ -54,6 +54,7 @@ import tabsBlock from './blocks/tabsBlock'
 import quoteBlock from './blocks/quoteBlock'
 
 import page from './pages/page'
+import pageCategory from './pages/pageCategory'
 
 export const schemaTypes = [
 company,
@@ -95,5 +96,6 @@ listBlock,
 carouselBlock,
 tabsBlock,
 quoteBlock,
-page
+page,
+pageCategory
 ]

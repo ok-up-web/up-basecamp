@@ -93,7 +93,7 @@ S.listItem()
                 .items([
 
                   S.listItem()
-                    .title('Pages')
+                    .title('Page')
                     .child(
                       S.documentTypeList('page')
                         .title('Page')
@@ -107,12 +107,12 @@ S.listItem()
                   S.listItem()
                     .title('Categories')
                     .child(
-                      S.documentTypeList('category')
+                      S.documentTypeList('pageCategory')
                         .title('Category')
                         .child((documentId) =>
                           S.document()
                             .documentId(documentId)
-                            .schemaType('category')
+                            .schemaType('pageCategory')
                         )
                     ),
 
