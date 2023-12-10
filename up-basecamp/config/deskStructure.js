@@ -83,6 +83,42 @@ S.listItem()
           ])
       ),
 
+
+      // pages
+      S.listItem()
+            .title('Pages')
+            .child(
+              S.list()
+                .title('Pages')
+                .items([
+
+                  S.listItem()
+                    .title('Pages')
+                    .child(
+                      S.documentTypeList('page')
+                        .title('Page')
+                        .child((documentId) =>
+                          S.document()
+                            .documentId(documentId)
+                            .schemaType('page')
+                        )
+                    ),
+
+                  S.listItem()
+                    .title('Categories')
+                    .child(
+                      S.documentTypeList('category')
+                        .title('Category')
+                        .child((documentId) =>
+                          S.document()
+                            .documentId(documentId)
+                            .schemaType('category')
+                        )
+                    ),
+
+                ])
+            ),
+
 // Checklists
         S.listItem()
           .title('Checklists')
