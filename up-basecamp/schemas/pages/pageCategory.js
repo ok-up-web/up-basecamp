@@ -1,4 +1,4 @@
-xport default{
+export default{
     "name": "pageCategory",
     "title": "Page Category",
     "type": "document",
