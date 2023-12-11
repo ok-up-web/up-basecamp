@@ -36,7 +36,7 @@ export default {
         type: 'array',
         title: 'Page builder',
         of: [
-          { type: 'heroBlock'}
+          { type: 'heroBlock'},
           { type: 'textBlock' },
           { type: 'accordionBlock' },
           { type: 'tableBlock' },
