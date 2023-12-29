@@ -1,4 +1,3 @@
- 
 export default {
     name: 'page',
     title: 'Page',
@@ -26,6 +25,27 @@ export default {
         },
         validation: (Rule) => Rule.required(),
       },
+      {
+        'name': 'categorize',
+        'title': 'Categorize',
+        'type': 'object',
+        'fields': [
+      {
+        name: 'category',
+        title: 'Category',
+        type: 'array',
+        of: [
+          {
+            type: 'reference',
+            to: {
+              type: 'category'
+            }
+          }
+        ]
+      },
+
+    ]
+},
       {
       name: 'subPages',
       title: 'Sub Pages',
@@ -66,27 +86,7 @@ export default {
 
             ]
     },
-      {
-        'name': 'categorize',
-        'title': 'Categorize',
-        'type': 'object',
-        'fields': [
-      {
-        name: 'category',
-        title: 'Category',
-        type: 'array',
-        of: [
-          {
-            type: 'reference',
-            to: {
-              type: 'category'
-            }
-          }
-        ]
-      },
 
-    ]
-},
 
 {
   'name': 'metaBlock',
@@ -103,8 +103,9 @@ export default {
       'name': 'description',
       'title': 'Meta description',
       'type': 'text',
-      'description': 'The description that appears in search engine results below the title. Recommended length is 120-155 characters.'
-    },
+      validation: Rule => Rule.max(155).warning('Max längd är 155 tecken.'),
+      description: 'Beskrivningen som visas i sökresultaten och på hemsidan. Max längd är oftast 155 tecken.'
+     },
     {
       'name': 'image',
       'title': 'Meta Image',
