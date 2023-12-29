@@ -1,47 +1,84 @@
-export const tableRowType = {
-  name: 'tableRowType',
+export default {
+  name: 'tabsBlock',
   type: 'object',
-  title: 'Table Row',
+  title: 'Tabs Block',
   fields: [
     {
-      name: 'field1',
-      type: 'object',
-      fields: [
+      name: 'tabs',
+      title: 'Tabs',
+      type: 'array',
+      of: [
         {
-          name: 'sv',
-          title: 'Swedish Field 1',
-          type: 'string'
+          type: 'object',
+          title: 'Tab',
+          fields: [
+            {
+              name: 'eventKey',
+              title: 'Event Key',
+              type: 'slug',
+              description: 'A unique key for this tab, used to switch between tabs.',
+            },
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'object',
+              fields: [
+                {
+                  name: 'sv',
+                  title: 'Swedish Title',
+                  type: 'string',
+                  description: 'Title of the tab in Swedish.',
+                },
+                {
+                  name: 'en',
+                  title: 'English Title',
+                  type: 'string',
+                  description: 'Title of the tab in English.',
+                },
+              ],
+              description: 'Title of the tab in different languages.',
+            },
+            {
+              name: 'content',
+              title: 'Content',
+              type: 'object',
+              fields: [
+                {
+                  name: 'sv',
+                  title: 'Swedish Content',
+                  type: 'text',
+                  description: 'Content of the tab in Swedish.',
+                },
+                {
+                  name: 'en',
+                  title: 'English Content',
+                  type: 'text',
+                  description: 'Content of the tab in English.',
+                },
+              ],
+              description: 'Content of the tab in different languages.',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'title.sv',
+              subtitle: 'eventKey.current',
+            },
+          },
         },
-        {
-          name: 'en',
-          title: 'English Field 1',
-          type: 'string'
-        }
       ],
-      title: 'Field 1'
     },
-    {
-      name: 'field2',
-      type: 'object',
-      fields: [
-        {
-          name: 'sv',
-          title: 'Swedish Field 2',
-          type: 'string'
-        },
-        {
-          name: 'en',
-          title: 'English Field 2',
-          type: 'string'
-        }
-      ],
-      title: 'Field 2'
-    }
   ],
   preview: {
     select: {
-      title: 'field1.sv',
-      subtitle: 'field2.sv'
-    }
-  }
+      title: 'tabs.0.title.sv',
+    },
+    prepare(selection) {
+      const { title } = selection;
+      return {
+        title: `Tabs: ${title}`,
+        subtitle: 'Tab block',
+      };
+    },
+  },
 };
