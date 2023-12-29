@@ -6,13 +6,37 @@ export default {
     {
       name: 'heading',
       title: 'Heading',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {
+          name: 'sv',
+          title: 'Swedish Heading',
+          type: 'string',
+        },
+        {
+          name: 'en',
+          title: 'English Heading',
+          type: 'string',
+        },
+      ],
       description: 'The main heading for the person gallery.',
     },
     {
       name: 'subtext',
       title: 'Subtext',
-      type: 'text',
+      type: 'object',
+      fields: [
+        {
+          name: 'sv',
+          title: 'Swedish Subtext',
+          type: 'text',
+        },
+        {
+          name: 'en',
+          title: 'English Subtext',
+          type: 'text',
+        },
+      ],
       description: 'Additional subtext for the person gallery.',
     },
     {
@@ -80,8 +104,8 @@ export default {
   ],
   preview: {
     select: {
-      title: 'heading',
-      subtitle: 'subtext',
+      title: 'heading.sv',
+      subtitle: 'subtext.sv',
     },
     prepare(selection) {
       const { title, subtitle } = selection;
