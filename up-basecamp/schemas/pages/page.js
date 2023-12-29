@@ -68,7 +68,8 @@ export default {
           { type: 'listBlock'},
           { type: 'quoteBlock'},
           { type: 'tabsBlock'},
-          { type: 'personGallery'}
+          { type: 'personGallery'},
+          { type: 'imageTextBlock'}
         ],
       },
 

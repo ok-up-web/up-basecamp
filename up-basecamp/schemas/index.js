@@ -60,6 +60,7 @@ import heroBlock from './blocks/heroBlock'
 import language from './settings/language'
 
 import personGallery from './blocks/personGallery'
+import imageTextBlock from './blocks/imageTextBlock'
 
 export const schemaTypes = [
 company,
@@ -105,5 +106,6 @@ page,
 pageCategory,
 heroBlock,
 language,
-personGallery
+personGallery,
+imageTextBlock
 ]
