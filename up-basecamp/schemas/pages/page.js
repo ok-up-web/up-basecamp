@@ -25,6 +25,13 @@ export default {
         },
         validation: (Rule) => Rule.required(),
       },
+      {
+    name: 'language',
+    title: 'Language',
+    type: 'reference',
+    to: [{ type: 'language' }],
+    description: 'Choose the language for this page.'
+  },
 
       {
         name: 'category',
@@ -39,7 +46,7 @@ export default {
           }
         ]
       },
- 
+
       {
       name: 'subPages',
       title: 'Sub Pages',

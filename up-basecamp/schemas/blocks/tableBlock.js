@@ -5,14 +5,42 @@ export const tableBlock = {
   fields: [
     {
       name: 'tableTitle',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {
+          name: 'sv',
+          title: 'Swedish Title',
+          type: 'string'
+        },
+        {
+          name: 'en',
+          title: 'English Title',
+          type: 'string'
+        }
+      ],
       title: 'Table Title'
     },
     {
       name: 'columnHeaders',
       type: 'array',
       title: 'Column Headers',
-      of: [{ type: 'string' }],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'sv',
+              title: 'Swedish Header',
+              type: 'string'
+            },
+            {
+              name: 'en',
+              title: 'English Header',
+              type: 'string'
+            }
+          ]
+        }
+      ],
       validation: Rule => Rule.min(2).max(2) // Validate that there are exactly two headers for the two columns.
     },
     {
@@ -28,37 +56,25 @@ export const tableBlock = {
     },
     {
       name: 'note',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {
+          name: 'sv',
+          title: 'Swedish Note',
+          type: 'string'
+        },
+        {
+          name: 'en',
+          title: 'English Note',
+          type: 'string'
+        }
+      ],
       title: 'Note'
     }
   ],
   preview: {
     select: {
-      title: 'tableTitle'
-    }
-  }
-};
-
-export const tableRowType = {
-  name: 'tableRowType',
-  type: 'object',
-  title: 'Table Row',
-  fields: [
-    {
-      name: 'field1',
-      type: 'string',
-      title: 'Field 1'
-    },
-    {
-      name: 'field2',
-      type: 'string',
-      title: 'Field 2'
-    }
-  ],
-  preview: {
-    select: {
-      title: 'field1',
-      subtitle: 'field2'
+      title: 'tableTitle.sv'
     }
   }
 };

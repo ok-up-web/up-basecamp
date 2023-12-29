@@ -57,6 +57,8 @@ import page from './pages/page'
 import pageCategory from './pages/pageCategory'
 import heroBlock from './blocks/heroBlock'
 
+import languageSchema from './settings/languageSchema'
+
 export const schemaTypes = [
 company,
 businessChain,
@@ -99,5 +101,6 @@ tabsBlock,
 quoteBlock,
 page,
 pageCategory,
-heroBlock
+heroBlock,
+languageSchema
 ]

@@ -6,13 +6,41 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {
+          name: 'sv',
+          title: 'Swedish',
+          type: 'string',
+          description: 'The main title for the hero section in Swedish.',
+        },
+        {
+          name: 'en',
+          title: 'English',
+          type: 'string',
+          description: 'The main title for the hero section in English.',
+        }
+      ],
       description: 'The main title for the hero section.',
     },
     {
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {
+          name: 'sv',
+          title: 'Swedish',
+          type: 'string',
+          description: 'A subtitle or additional text displayed under the title in Swedish.',
+        },
+        {
+          name: 'en',
+          title: 'English',
+          type: 'string',
+          description: 'A subtitle or additional text displayed under the title in English.',
+        }
+      ],
       description: 'A subtitle or additional text displayed under the title.',
     },
     {
@@ -23,7 +51,21 @@ export default {
         {
           name: 'label',
           title: 'Label',
-          type: 'string',
+          type: 'object',
+          fields: [
+            {
+              name: 'sv',
+              title: 'Swedish',
+              type: 'string',
+              description: 'The text displayed on the CTA button in Swedish.',
+            },
+            {
+              name: 'en',
+              title: 'English',
+              type: 'string',
+              description: 'The text displayed on the CTA button in English.',
+            }
+          ],
           description: 'The text displayed on the CTA button.',
         },
         {
@@ -41,28 +83,44 @@ export default {
         {
           name: 'buttonUrl',
           title: 'Button URL or Mailto',
-          type: 'string',
-          description: 'The URL the CTA button will direct to, or a mailto: link.',
-          hidden: ({ parent }) => parent?.linkType !== 'url',
-          validation: Rule => Rule.custom(value => {
-            if (!value) return true; // allows null or undefined
-            if (value.startsWith('mailto:')) {
-              const email = value.substring(7);
-              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              return emailRegex.test(email) ? true : 'Please enter a valid email address after "mailto:"';
-            } else {
-              const urlRegex = /^(http|https):\/\/[^ "]+$/;
-              return urlRegex.test(value) ? true : 'Please enter a valid URL.';
+          type: 'object',
+          fields: [
+            {
+              name: 'sv',
+              title: 'Swedish',
+              type: 'string',
+              description: 'The URL the CTA button will direct to, or a mailto: link in Swedish.',
+            },
+            {
+              name: 'en',
+              title: 'English',
+              type: 'string',
+              description: 'The URL the CTA button will direct to, or a mailto: link in English.',
             }
-          })
+          ],
+          hidden: ({ parent }) => parent?.linkType !== 'url',
         },
         {
           name: 'pageLink',
           title: 'Page Link',
-          type: 'reference',
-          to: [{ type: 'page' }],
+          type: 'object',
+          fields: [
+            {
+              name: 'sv',
+              title: 'Page Link Swedish',
+              type: 'reference',
+              to: [{ type: 'page' }],
+              description: 'Select an internal page for the CTA button to link to in Swedish.',
+            },
+            {
+              name: 'en',
+              title: 'Page Link English',
+              type: 'reference',
+              to: [{ type: 'page' }],
+              description: 'Select an internal page for the CTA button to link to in English.',
+            }
+          ],
           hidden: ({ parent }) => parent?.linkType !== 'page',
-          description: 'Select an internal page for the CTA button to link to.',
         },
       ],
     },
@@ -76,9 +134,21 @@ export default {
       fields: [
         {
           name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-          description: 'A short description of the image for accessibility (SEO and screen readers).',
+          type: 'object',
+          fields: [
+            {
+              name: 'sv',
+              type: 'string',
+              title: 'Alternative text (Swedish)',
+              description: 'A short description of the image for accessibility in Swedish (SEO and screen readers).',
+            },
+            {
+              name: 'en',
+              type: 'string',
+              title: 'Alternative text (English)',
+              description: 'A short description of the image for accessibility in English (SEO and screen readers).',
+            }
+          ],
           options: {
             isHighlighted: true
           }
@@ -89,14 +159,14 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'subtitle',
+      title: 'title.sv',
+      subtitle: 'subtitle.sv',
       media: 'image',
     },
     prepare({ title, subtitle, media }) {
       return {
-        title,
-        subtitle,
+        title: title || '',
+        subtitle: subtitle || '',
         media,
       };
     },

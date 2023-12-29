@@ -206,4 +206,15 @@ S.listItem()
                 S.documentTypeListItem('kioskUser').icon(CaseIcon).title('Kiosk user'),
               ])
           ),
+          //Settings
+          S.listItem()
+            .title('Settings')
+            .icon(CaseIcon)
+            .child(
+              S.list()
+                .title('Settings')
+                .items([
+                  S.documentTypeListItem('languageSchema').icon(CaseIcon).title('Kiosk user'),
+                ])
+            ),
     ]);
