@@ -26,6 +26,13 @@ export default {
         validation: (Rule) => Rule.required(),
       },
       {
+    name: 'language',
+    title: 'Language',
+    type: 'reference',
+    to: [{ type: 'language' }],
+    description: 'Choose the language for this page.'
+  },
+      {
         name: 'excerpt',
         title: 'Excerpt',
         type: 'text',
