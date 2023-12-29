@@ -212,9 +212,9 @@ S.listItem()
             .icon(CaseIcon)
             .child(
               S.list()
-                .title('Settings')
+                .title('Language')
                 .items([
-                  S.documentTypeListItem('languageSchema').icon(CaseIcon).title('Kiosk user'),
+                  S.documentTypeListItem('language').icon(CaseIcon).title('Kiosk user'),
                 ])
             ),
     ]);

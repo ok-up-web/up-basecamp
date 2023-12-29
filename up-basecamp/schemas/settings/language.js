@@ -1,4 +1,4 @@
-export const languageSchema = {
+export default {
   name: 'language',
   type: 'object',
   title: 'Language',
