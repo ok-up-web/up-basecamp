@@ -25,11 +25,7 @@ export default {
         },
         validation: (Rule) => Rule.required(),
       },
-      {
-        'name': 'categorize',
-        'title': 'Categorize',
-        'type': 'object',
-        'fields': [
+
       {
         name: 'category',
         title: 'Category',
@@ -43,9 +39,7 @@ export default {
           }
         ]
       },
-
-    ]
-},
+ 
       {
       name: 'subPages',
       title: 'Sub Pages',
