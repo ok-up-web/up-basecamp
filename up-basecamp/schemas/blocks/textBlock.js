@@ -23,7 +23,6 @@ export const blockContent = {
   type: 'array',
   of: [
     {
-      title: 'Block',
       type: 'block',
       styles: [
         { title: 'Normal', value: 'normal' },
@@ -35,7 +34,7 @@ export const blockContent = {
       ],
       lists: [
         { title: 'Bullet', value: 'bullet' },
-        { title: 'Numbered', value: 'number' }, // Lägg till numrerade listor här
+        { title: 'Numbered', value: 'number' },
       ],
       marks: {
         decorators: [
@@ -65,17 +64,18 @@ export const blockContent = {
       type: 'image',
       options: { hotspot: true },
     },
+  ],
+};
+
+export const imageBlock = {
+  title: 'Image Block',
+  name: 'imageBlock',
+  type: 'object',
+  fields: [
     {
-      title: 'Text Alignment', // Lägg till textjustering här
-      name: 'textAlignment',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Left', value: 'left' },
-          { title: 'Center', value: 'center' },
-          { title: 'Right', value: 'right' },
-        ],
-      },
+      type: 'image',
+      name: 'image',
+      options: { hotspot: true },
     },
   ],
 };
