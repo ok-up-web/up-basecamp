@@ -1,6 +1,6 @@
 export default {
   name: 'language',
-  type: 'object',
+    type: 'document',
   title: 'Language',
   fields: [
     {
