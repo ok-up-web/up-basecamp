@@ -33,7 +33,10 @@ export const blockContent = {
         { title: 'H4', value: 'h4' },
         { title: 'Quote', value: 'blockquote' },
       ],
-      lists: [{ title: 'Bullet', value: 'bullet' }],
+      lists: [
+        { title: 'Bullet', value: 'bullet' },
+        { title: 'Numbered', value: 'number' }, // Lägg till numrerade listor här
+      ],
       marks: {
         decorators: [
           { title: 'Strong', value: 'strong' },
@@ -61,6 +64,18 @@ export const blockContent = {
     {
       type: 'image',
       options: { hotspot: true },
+    },
+    {
+      title: 'Text Alignment', // Lägg till textjustering här
+      name: 'textAlignment',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Left', value: 'left' },
+          { title: 'Center', value: 'center' },
+          { title: 'Right', value: 'right' },
+        ],
+      },
     },
   ],
 };
