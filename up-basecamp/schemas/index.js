@@ -59,6 +59,8 @@ import heroBlock from './blocks/heroBlock'
 
 import language from './settings/language'
 
+import personGallery from './blocks/personGallery'
+
 export const schemaTypes = [
 company,
 businessChain,
@@ -102,5 +104,6 @@ quoteBlock,
 page,
 pageCategory,
 heroBlock,
-language
+language,
+personGallery
 ]
