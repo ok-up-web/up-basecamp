@@ -27,12 +27,7 @@ export default {
         },
         validation: (Rule) => Rule.required(),
       },
-      {
-      name: 'subPages',
-      title: 'Sub Pages',
-      type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'page' }] }],
-    },
+ 
     {
       name: 'excerpt',
       title: 'Excerpt',
