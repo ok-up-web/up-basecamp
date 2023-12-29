@@ -1,3 +1,5 @@
+import TextareaWithCounter from '../../components/TextareaWithCounter';
+
 export default {
     name: 'page',
     title: 'Page',
@@ -26,11 +28,21 @@ export default {
         validation: (Rule) => Rule.required(),
       },
       {
-        name: 'excerpt',
-        title: 'Excerpt',
-        type: 'text',
-        validation: Rule => Rule.required()
+      name: 'subPages',
+      title: 'Sub Pages',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'page' }] }],
+    },
+    {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      inputComponent: TextareaWithCounter,
+      options: {
+        maxLength: 120,
       },
+      validation: Rule => Rule.required().max(120).warning('Excerpt should not be more than 120 characters'),
+    },
       {
         name: 'pageBuilder',
         type: 'array',
