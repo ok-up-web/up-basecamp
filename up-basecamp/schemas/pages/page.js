@@ -1,5 +1,4 @@
-import TextareaWithCounter from '../../components/TextareaWithCounter';
-
+ 
 export default {
     name: 'page',
     title: 'Page',
@@ -33,7 +32,7 @@ export default {
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'page' }] }],
     },
-  
+
       {
         name: 'pageBuilder',
         type: 'array',
