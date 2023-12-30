@@ -6,41 +6,13 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'object',
-      fields: [
-        {
-          name: 'sv',
-          title: 'Swedish',
-          type: 'string',
-          description: 'The main title for the hero section in Swedish.',
-        },
-        {
-          name: 'en',
-          title: 'English',
-          type: 'string',
-          description: 'The main title for the hero section in English.',
-        }
-      ],
+      type: 'string',
       description: 'The main title for the hero section.',
     },
     {
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'object',
-      fields: [
-        {
-          name: 'sv',
-          title: 'Swedish',
-          type: 'string',
-          description: 'A subtitle or additional text displayed under the title in Swedish.',
-        },
-        {
-          name: 'en',
-          title: 'English',
-          type: 'string',
-          description: 'A subtitle or additional text displayed under the title in English.',
-        }
-      ],
+      type: 'string',
       description: 'A subtitle or additional text displayed under the title.',
     },
     {
@@ -51,21 +23,7 @@ export default {
         {
           name: 'label',
           title: 'Label',
-          type: 'object',
-          fields: [
-            {
-              name: 'sv',
-              title: 'Swedish',
-              type: 'string',
-              description: 'The text displayed on the CTA button in Swedish.',
-            },
-            {
-              name: 'en',
-              title: 'English',
-              type: 'string',
-              description: 'The text displayed on the CTA button in English.',
-            }
-          ],
+          type: 'string',
           description: 'The text displayed on the CTA button.',
         },
         {
@@ -83,43 +41,16 @@ export default {
         {
           name: 'buttonUrl',
           title: 'Button URL or Mailto',
-          type: 'object',
-          fields: [
-            {
-              name: 'sv',
-              title: 'Swedish',
-              type: 'string',
-              description: 'The URL the CTA button will direct to, or a mailto: link in Swedish.',
-            },
-            {
-              name: 'en',
-              title: 'English',
-              type: 'string',
-              description: 'The URL the CTA button will direct to, or a mailto: link in English.',
-            }
-          ],
+          type: 'string',
+          description: 'The URL the CTA button will direct to, or a mailto: link.',
           hidden: ({ parent }) => parent?.linkType !== 'url',
         },
         {
           name: 'pageLink',
           title: 'Page Link',
-          type: 'object',
-          fields: [
-            {
-              name: 'sv',
-              title: 'Page Link Swedish',
-              type: 'reference',
-              to: [{ type: 'page' }],
-              description: 'Select an internal page for the CTA button to link to in Swedish.',
-            },
-            {
-              name: 'en',
-              title: 'Page Link English',
-              type: 'reference',
-              to: [{ type: 'page' }],
-              description: 'Select an internal page for the CTA button to link to in English.',
-            }
-          ],
+          type: 'reference',
+          to: [{ type: 'page' }],
+          description: 'Select an internal page for the CTA button to link to.',
           hidden: ({ parent }) => parent?.linkType !== 'page',
         },
       ],
@@ -134,21 +65,9 @@ export default {
       fields: [
         {
           name: 'alt',
-          type: 'object',
-          fields: [
-            {
-              name: 'sv',
-              type: 'string',
-              title: 'Alternative text (Swedish)',
-              description: 'A short description of the image for accessibility in Swedish (SEO and screen readers).',
-            },
-            {
-              name: 'en',
-              type: 'string',
-              title: 'Alternative text (English)',
-              description: 'A short description of the image for accessibility in English (SEO and screen readers).',
-            }
-          ],
+          type: 'string',
+          title: 'Alternative text',
+          description: 'A short description of the image for accessibility (SEO and screen readers).',
           options: {
             isHighlighted: true
           }
@@ -159,8 +78,8 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title.sv',
-      subtitle: 'subtitle.sv',
+      title: 'title',
+      subtitle: 'subtitle',
       media: 'image',
     },
     prepare({ title, subtitle, media }) {

@@ -6,21 +6,8 @@ export default {
     {
       name: 'mainTitle',
       title: 'Main Title',
-      type: 'object',
-      fields: [
-        {
-          name: 'sv',
-          title: 'Swedish',
-          type: 'string',
-          description: 'This title will be displayed as an H2 above your accordion content in Swedish.'
-        },
-        {
-          name: 'en',
-          title: 'English',
-          type: 'string',
-          description: 'This title will be displayed as an H2 above your accordion content in English.'
-        },
-      ]
+      type: 'string',
+      description: 'This title will be displayed as an H2 above your accordion content.'
     },
     {
       name: 'accordionItems',
@@ -35,46 +22,20 @@ export default {
             {
               name: 'title',
               title: 'Title',
-              type: 'object',
-              fields: [
-                {
-                  name: 'sv',
-                  title: 'Swedish',
-                  type: 'string',
-                  description: 'This title will be displayed as the header for a part of your accordion content in Swedish.'
-                },
-                {
-                  name: 'en',
-                  title: 'English',
-                  type: 'string',
-                  description: 'This title will be displayed as the header for a part of your accordion content in English.'
-                },
-              ]
+              type: 'string',
+              description: 'This title will be displayed as the header for a part of your accordion content.'
             },
             {
               name: 'content',
               title: 'Content',
-              type: 'object',
-              fields: [
-                {
-                  name: 'sv',
-                  title: 'Swedish',
-                  type: 'text',
-                  description: 'This content will be displayed in Swedish when the user clicks on the accordion header.'
-                },
-                {
-                  name: 'en',
-                  title: 'English',
-                  type: 'text',
-                  description: 'This content will be displayed in English when the user clicks on the accordion header.'
-                },
-              ]
+              type: 'text',
+              description: 'This content will be displayed when the user clicks on the accordion header.'
             }
           ],
           preview: {
             select: {
-              title: 'title.sv',
-              subtitle: 'content.sv'
+              title: 'title',
+              subtitle: 'content'
             }
           }
         }
@@ -83,7 +44,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'mainTitle.sv'
+      title: 'mainTitle'
     }
   }
 };

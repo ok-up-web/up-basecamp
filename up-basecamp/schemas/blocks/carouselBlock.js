@@ -23,41 +23,17 @@ export default {
             {
               name: 'title',
               title: 'Title',
-              type: 'object',
-              fields: [
-                {
-                  name: 'sv',
-                  title: 'Swedish',
-                  type: 'string'
-                },
-                {
-                  name: 'en',
-                  title: 'English',
-                  type: 'string'
-                }
-              ]
+              type: 'string',
             },
             {
               name: 'description',
               title: 'Description',
-              type: 'object',
-              fields: [
-                {
-                  name: 'sv',
-                  title: 'Swedish',
-                  type: 'text'
-                },
-                {
-                  name: 'en',
-                  title: 'English',
-                  type: 'text'
-                }
-              ]
+              type: 'text',
             }
           ],
           preview: {
             select: {
-              title: 'title.sv',
+              title: 'title',
               media: 'image',
             },
             prepare({ title, media }) {
@@ -74,8 +50,8 @@ export default {
   ],
   preview: {
     select: {
-      title: 'slides.0.title.sv',
-      media: 'slides.0.image',
+      title: 'slide.title',
+      media: 'slide.image',
     },
     prepare(selection) {
       const { title, media } = selection;

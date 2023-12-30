@@ -21,47 +21,19 @@ export default {
             {
               name: 'title',
               title: 'Title',
-              type: 'object',
-              fields: [
-                {
-                  name: 'sv',
-                  title: 'Swedish Title',
-                  type: 'string',
-                  description: 'Title of the tab in Swedish.',
-                },
-                {
-                  name: 'en',
-                  title: 'English Title',
-                  type: 'string',
-                  description: 'Title of the tab in English.',
-                },
-              ],
-              description: 'Title of the tab in different languages.',
+              type: 'string',
+              description: 'Title of the tab.',
             },
             {
               name: 'content',
               title: 'Content',
-              type: 'object',
-              fields: [
-                {
-                  name: 'sv',
-                  title: 'Swedish Content',
-                  type: 'text',
-                  description: 'Content of the tab in Swedish.',
-                },
-                {
-                  name: 'en',
-                  title: 'English Content',
-                  type: 'text',
-                  description: 'Content of the tab in English.',
-                },
-              ],
-              description: 'Content of the tab in different languages.',
+              type: 'text',
+              description: 'Content of the tab.',
             },
           ],
           preview: {
             select: {
-              title: 'title.sv',
+              title: 'title',
               subtitle: 'eventKey.current',
             },
           },
@@ -71,7 +43,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'tabs.0.title.sv',
+      title: 'tabs.0.title',
     },
     prepare(selection) {
       const { title } = selection;
