@@ -6,37 +6,13 @@ export default {
     {
       name: 'heading',
       title: 'Heading',
-      type: 'object',
-      fields: [
-        {
-          name: 'sv',
-          title: 'Swedish Heading',
-          type: 'string',
-        },
-        {
-          name: 'en',
-          title: 'English Heading',
-          type: 'string',
-        },
-      ],
+      type: 'string',
       description: 'The main heading for the person gallery.',
     },
     {
       name: 'subtext',
       title: 'Subtext',
-      type: 'object',
-      fields: [
-        {
-          name: 'sv',
-          title: 'Swedish Subtext',
-          type: 'text',
-        },
-        {
-          name: 'en',
-          title: 'English Subtext',
-          type: 'text',
-        },
-      ],
+      type: 'text',
       description: 'Additional subtext for the person gallery.',
     },
     {
@@ -64,19 +40,7 @@ export default {
             {
               name: 'title',
               title: 'Title',
-              type: 'object',
-              fields: [
-                {
-                  name: 'sv',
-                  title: 'Swedish Title',
-                  type: 'string',
-                },
-                {
-                  name: 'en',
-                  title: 'English Title',
-                  type: 'string',
-                },
-              ],
+              type: 'string',
             },
             {
               name: 'email',
@@ -87,13 +51,13 @@ export default {
           preview: {
             select: {
               title: 'name',
-              subtitle: 'title.sv',
+              subtitle: 'title',
               media: 'image',
             },
             prepare({ title, subtitle, media }) {
               return {
                 title: title,
-                subtitle: `Title (SV): ${subtitle}`,
+                subtitle: `Title: ${subtitle}`,
                 media,
               };
             },
@@ -104,8 +68,8 @@ export default {
   ],
   preview: {
     select: {
-      title: 'heading.sv',
-      subtitle: 'subtext.sv',
+      title: 'heading',
+      subtitle: 'subtext',
     },
     prepare(selection) {
       const { title, subtitle } = selection;

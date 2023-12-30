@@ -51,6 +51,7 @@ export default {
           { type: 'listBlock'},
           { type: 'quoteBlock'},
           { type: 'tabsBlock'},
+          { type: 'heroBlock'},
               { type: 'personGallery'},
                 { type: 'imageTextBlock'}
         ],
