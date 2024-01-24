@@ -62,7 +62,7 @@ import language from './settings/language'
 import personGallery from './blocks/personGallery'
 import imageTextBlock from './blocks/imageTextBlock'
 
-import eventType from './calendar'
+import eventType from './calendar/event'
 
 export const schemaTypes = [
 
