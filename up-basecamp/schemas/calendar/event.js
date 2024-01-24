@@ -1,19 +1,19 @@
 // ./schemas/eventType.ts
 import {CalendarIcon} from '@sanity/icons'
-import { defineField, defineType } from 'sanity'
+ 
 
-const eventType = defineType({
+export default {
   name: 'eventType',
   type: 'document',
   icon: CalendarIcon,
   title: 'Event',
   fields: [
-    defineField({
+    {
       name: 'title',
       title: 'Titel',
       type: 'string',
-    }),
-    defineField({
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -22,54 +22,54 @@ const eventType = defineType({
         source: 'title',
         maxLength: 96,
       },
-    }),
-    defineField({
+    },
+    {
       name: 'date',
       title: 'Datum',
       type: 'date',
       options: {
         dateFormat: 'YYYY-MM-DD',
       },
-    }),
-    defineField({
+    },
+    {
       name: 'time',
       title: 'Tid',
       description: 'Ex: 12.00 - 17.00',
       type: 'string',
 
-    }),
-    defineField({
+    },
+    {
       name: 'address',
       title: 'Adress',
       type: 'string',
-    }),
-    defineField({
+    },
+    {
       name: 'info',
       title: 'Beskrivning av händelsen',
       type: 'text',
-    }),
-    defineField({
+    },
+    {
       name: 'lastDate',
       title: 'Sista anmälningsdatum',
       type: 'date',
       options: {
         dateFormat: 'YYYY-MM-DD',
       },
-    }),
-    defineField({
+    },
+    {
       name: 'image',
       type: 'image',
         title: 'Bild',
       options: {hotspot: true},
       fields: [
-        defineField({
+        {
           name: 'alt',
           type: 'string',
           title: 'Alternative text',
-        }),
+        },
       ],
-    }),
-    defineField({
+    },
+    {
  name: 'activityType',
  title: 'Aktivitetstyp',
  type: 'string',
@@ -121,8 +121,8 @@ const eventType = defineType({
       { title: 'Överlevnadskurs', value: 'survivalCourse' },
     ],
  },
-}),
-defineField({
+},
+{
   name: 'difficulty',
   title: 'Svårighetsgrad',
   type: 'string',
@@ -130,8 +130,8 @@ defineField({
     list: ['Lätt', 'Medel', 'Svår', 'Expert'],
     layout: 'dropdown',
   },
-}),
-defineField({
+},
+{
   name: 'equipmentList',
   title: 'Utrustningslista',
   type: 'array',
@@ -184,39 +184,39 @@ defineField({
       { title: 'Överlevnadskurs', equipment: ['Första hjälpen-kit', 'Kniv', 'Tändstål', 'Vattenreningsutrustning', 'Överlevnadsbok'] },
     ],
   },
-}),
-defineField({
+},
+{
   name: 'weatherPolicy',
   title: 'Väderpolicy',
   type: 'text',
   description: 'Information om hur evenemanget påverkas av väderförhållanden.',
-}),
-defineField({
+},
+{
   name: 'safetyInfo',
   title: 'Säkerhetsinformation',
   type: 'text',
   description: 'Viktig säkerhetsinformation och riktlinjer för deltagarna.',
-}),
-defineField({
+},
+{
   name: 'groupBookingOptions',
   title: 'Gruppbokningsalternativ',
   type: 'text',
   description: 'Information om bokningsalternativ och priser för grupper.',
-}),
-defineField({
+},
+{
   name: 'accessibility',
   title: 'Tillgänglighet',
   type: 'text',
   description: 'Information om tillgänglighetsanpassningar för evenemanget.',
-}),
-defineField({
+},
+{
   name: 'bookingRules',
   title: 'Bokningsregler',
   type: 'text',
   description: 'Detaljerade regler och villkor för bokning, inklusive avbokningspolicy och eventuella åldersbegränsningar.',
-}),
+},
 
-defineField({
+{
   name: 'paymentOptions',
   title: 'Betalningsalternativ',
   type: 'array',
@@ -232,8 +232,8 @@ defineField({
       // Fler betalningsalternativ kan läggas till efter behov
     ],
   },
-}),
-defineField({
+},
+{
   name: 'bookingMethod',
   title: 'Bokningsmetod',
   type: 'object',
@@ -264,68 +264,68 @@ defineField({
     },
   ],
   description: 'Välj hur deltagarna kan boka för detta evenemang.',
-}),
-defineField({
+},
+{
   name: 'minParticipants',
   title: 'Minst Antal Deltagare',
   type: 'number',
   description: 'Ange det minst antalet deltagare som kan delta i evenemanget. Detta hjälper till att hantera gruppstorleken för säkerhet och kvalitet.',
   validation: Rule => Rule.required().min(1).error('Du måste ange ett positivt antal deltagare.'),
-}),
-defineField({
+},
+{
   name: 'maxParticipants',
   title: 'Maximalt Antal Deltagare',
   type: 'number',
   description: 'Ange det maximala antalet deltagare som kan delta i evenemanget. Detta hjälper till att hantera gruppstorleken för säkerhet och kvalitet.',
   validation: Rule => Rule.required().min(1).error('Du måste ange ett positivt antal deltagare.'),
-}),
+},
 // Åldersgräns och Målgrupp
-defineField({
+{
   name: 'ageLimit',
   title: 'Åldersgräns och Målgrupp',
   type: 'string',
   description: 'Ange eventuell åldersgräns och den målgrupp som evenemanget är riktat mot.',
-}),
+},
 
 // Tillgänglighetsinformation
-defineField({
+{
   name: 'accessibilityInfo',
   title: 'Tillgänglighetsinformation',
   type: 'text',
   description: 'Beskriv hur evenemanget är tillgängligt för personer med funktionsnedsättningar.',
-}),
+},
 
 // Säkerhetsinformation och Risker
-defineField({
+{
   name: 'safetyAndRisks',
   title: 'Säkerhetsinformation och Risker',
   type: 'text',
   description: 'Detaljerad information om säkerhetsåtgärder och potentiella risker associerade med evenemanget.',
-}),
+},
 
 // Mat och Dryck
-defineField({
+{
   name: 'foodAndBeverages',
   title: 'Mat och Dryck',
   type: 'text',
   description: 'Information om mat och dryck som tillhandahålls, eller om deltagarna behöver ta med egen föda.',
-}),
+},
 
 // Transport och Parkering
-defineField({
+{
   name: 'transportationAndParking',
   title: 'Transport och Parkering',
   type: 'text',
   description: 'Information om transportalternativ till evenemanget och parkeringsmöjligheter.',
-}),
+},
 
 // COVID-19 Protokoll och Hälsoregler
-defineField({
+{
   name: 'covid19Protocols',
   title: 'COVID-19 Protokoll och Hälsoregler',
   type: 'text',
   description: 'Beskriv eventuella särskilda hälsoregler eller COVID-19 protokoll som deltagarna behöver följa.',
-}),
+},
 
   ],
   preview: {
@@ -350,5 +350,3 @@ defineField({
 }
 
 })
-
-export default eventType;
