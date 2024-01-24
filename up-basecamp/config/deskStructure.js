@@ -148,6 +148,17 @@ S.listItem()
                   S.documentTypeListItem('spot').icon(PinIcon).title('Spot'),
             ])
         ),
+        // Calendar
+                S.listItem()
+                  .title('Calendar')
+                  .icon(CaseIcon)
+                  .child(
+                    S.list()
+                      .title('Calendar')
+                      .items([
+                        S.documentTypeListItem('eventType').icon(CaseIcon).title('Event'),
+                      ])
+                  ),
 
       // Categorization List Item
       S.listItem()

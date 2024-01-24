@@ -62,7 +62,10 @@ import language from './settings/language'
 import personGallery from './blocks/personGallery'
 import imageTextBlock from './blocks/imageTextBlock'
 
+import eventType from './calendar'
+
 export const schemaTypes = [
+
 company,
 businessChain,
 mainEquipmentCategory,
@@ -107,5 +110,6 @@ pageCategory,
 heroBlock,
 language,
 personGallery,
-imageTextBlock
+imageTextBlock,
+eventType
 ]
