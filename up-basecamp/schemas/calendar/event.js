@@ -2,7 +2,7 @@
 import {CalendarIcon} from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 
-export const eventType = defineType({
+const eventType = defineType({
   name: 'eventType',
   type: 'document',
   icon: CalendarIcon,
@@ -326,7 +326,7 @@ defineField({
   type: 'text',
   description: 'Beskriv eventuella särskilda hälsoregler eller COVID-19 protokoll som deltagarna behöver följa.',
 }),
- 
+
   ],
   preview: {
   select: {
@@ -350,3 +350,5 @@ defineField({
 }
 
 })
+
+export default eventType;
