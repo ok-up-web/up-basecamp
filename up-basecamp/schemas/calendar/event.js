@@ -325,9 +325,12 @@ export default {
   title: 'COVID-19 Protokoll och Hälsoregler',
   type: 'text',
   description: 'Beskriv eventuella särskilda hälsoregler eller COVID-19 protokoll som deltagarna behöver följa.',
-},
+}
+]
 
-  ],
+
+}),
+],
   preview: {
   select: {
     title: 'title',
@@ -353,5 +356,7 @@ export default {
       subtitle: formattedDate,
     };
   },
+
+}
 
 })
