@@ -1,6 +1,6 @@
 // ./schemas/eventType.ts
 import {CalendarIcon} from '@sanity/icons'
- 
+
 
 export default {
   name: 'eventType',
@@ -334,19 +334,24 @@ export default {
     date: 'date',
   },
   prepare(selection) {
-    const { date } = selection;
+    const { date, title } = selection;
 
-    // Konvertera datumsträngen till ett Date-objekt
+    // Kontrollera att datumet är giltigt
     const parsedDate = new Date(date);
+    if (isNaN(parsedDate)) {
+      return {
+        title,
+        subtitle: 'Ogiltigt datum',
+      };
+    }
 
     // Formattera datumet till önskat format
     const formattedDate = `${parsedDate.getFullYear()}-${String(parsedDate.getMonth() + 1).padStart(2, '0')}-${String(parsedDate.getDate()).padStart(2, '0')}`;
 
     return {
-      title: selection.title,
+      title,
       subtitle: formattedDate,
     };
   },
-}
 
 })
