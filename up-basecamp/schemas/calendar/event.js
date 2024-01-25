@@ -326,6 +326,8 @@ export default {
   type: 'text',
   description: 'Beskriv eventuella särskilda hälsoregler eller COVID-19 protokoll som deltagarna behöver följa.',
 },
+
+}),
 ],
   preview: {
   select: {
