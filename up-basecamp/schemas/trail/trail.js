@@ -1,4 +1,4 @@
-export const poi = {
+export default {
   name: 'poi',
   title: 'Point of Interest',
   type: 'document',
@@ -22,7 +22,7 @@ export const poi = {
   ],
 }
 
-export const direction = {
+export default {
   name: 'direction',
   title: 'Direction',
   type: 'document',
@@ -46,7 +46,7 @@ export const direction = {
   ],
 }
 
-export const trail = {
+export default {
   name: 'trail',
   title: 'Trail',
   type: 'document',
