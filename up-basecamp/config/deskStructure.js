@@ -129,6 +129,7 @@ S.listItem()
               .items([
                 S.documentTypeListItem('checklist').icon(CaseIcon).title('Checklist'),
                 S.documentTypeListItem('items').icon(CaseIcon).title('Items'),
+                S.documentTypeListItem('trail').icon(CaseIcon).title('Trail'),
               ])
           ),
 

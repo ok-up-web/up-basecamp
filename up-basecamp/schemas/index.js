@@ -63,6 +63,7 @@ import personGallery from './blocks/personGallery'
 import imageTextBlock from './blocks/imageTextBlock'
 
 import eventType from './calendar/event'
+import trail from './trail/trail'
 
 export const schemaTypes = [
 
@@ -111,5 +112,6 @@ heroBlock,
 language,
 personGallery,
 imageTextBlock,
-eventType
+eventType,
+trail
 ]
