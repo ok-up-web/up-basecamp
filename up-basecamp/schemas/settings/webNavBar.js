@@ -3,10 +3,8 @@ export default {
   type: 'document',
   title: 'Huvudmeny',
   fields: [
-    {
-      name: 'title',
-      type: 'string',
-      title: 'Titel'
+    initialValue: {
+      fixedTitle: 'Webbplatsens huvudmeny',
     },
     {
       name: 'leftLinks',
