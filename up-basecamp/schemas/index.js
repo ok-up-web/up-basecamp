@@ -63,7 +63,7 @@ import personGallery from './blocks/personGallery'
 import imageTextBlock from './blocks/imageTextBlock'
 
 import eventType from './calendar/event'
-import trail from './trail/trail'
+//import trail from './trail/trail'
 
 import webNavBar from './settings/webNavBar'
 import webNavBarMenuItem from './settings/webNavBarMenuItem'
@@ -116,7 +116,6 @@ language,
 personGallery,
 imageTextBlock,
 eventType,
-trail,
 webNavBar,
 webNavBarMenuItem
 ]
