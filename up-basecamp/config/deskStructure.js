@@ -6,7 +6,7 @@ const singletonListItem = (S, typeName, title) =>
   S.listItem()
     .title(title || typeName)
     .id(typeName)
-    .child(S.document().schemaType(typeName).documentId(typeName));
+    .child(S.document().title(title || typeName).schemaType(typeName).documentId(typeName));
 
 
 export const myStructure = (S) =>
@@ -129,7 +129,7 @@ S.listItem()
               .items([
                 S.documentTypeListItem('checklist').icon(CaseIcon).title('Checklist'),
                 S.documentTypeListItem('items').icon(CaseIcon).title('Items'),
-    
+
               ])
           ),
 
@@ -228,6 +228,7 @@ S.listItem()
                 .items([
                   S.documentTypeListItem('language').icon(CaseIcon).title('Languages'),
                 singletonListItem(S, "webNavBar", "Navbar"),
+                  singletonListItem(S, "webFooter", "Footer"),
                 ])
             ),
     ]);

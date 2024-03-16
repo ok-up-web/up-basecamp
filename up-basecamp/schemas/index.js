@@ -68,6 +68,9 @@ import eventType from './calendar/event'
 import webNavBar from './settings/webNavBar'
 import webNavBarMenuItem from './settings/webNavBarMenuItem'
 
+import webFooter from './settings/webFooter'
+import webFooterMenuItem from './settings/webFooterMenuItem'
+
 export const schemaTypes = [
 
 company,
@@ -117,5 +120,7 @@ personGallery,
 imageTextBlock,
 eventType,
 webNavBar,
-webNavBarMenuItem
+webNavBarMenuItem,
+webFooter,
+webFooterMenuItem
 ]

@@ -1,22 +1,20 @@
 export default {
   name: 'webNavBar',
   type: 'document',
-  title: 'Huvudmeny',
+  title: 'NavBar',
+   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fields: [
-    initialValue: {
-      fixedTitle: 'Webbplatsens huvudmeny',
-    },
     {
       name: 'leftLinks',
       type: 'array',
       of: [{type: 'reference', to: [{type: 'webNavBarMenuItem'}]}],
-      title: 'Länkar till Vänster'
+      title: 'Menu items left'
     },
     {
       name: 'rightLinks',
       type: 'array',
       of: [{type: 'reference', to: [{type: 'webNavBarMenuItem'}]}],
-      title: 'Länkar till Höger'
+      title: 'Menu items right'
     }
   ]
 };

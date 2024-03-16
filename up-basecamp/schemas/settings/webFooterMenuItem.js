@@ -1,37 +1,36 @@
 export default {
-  name: 'webNavBarMenuItem',
-  type: 'document',
+  name: 'webFooterMenuItem',
   title: 'MenuItem',
+  type: 'document',
   fields: [
     {
       name: 'title',
+      title: 'Titel',
       type: 'string',
-      title: 'Titel'
     },
     {
-      name: 'type',
+      name: 'linkType',
+      title: 'Link type',
       type: 'string',
-      title: 'Typ',
       options: {
         list: [
           {title: 'Internal page', value: 'internal'},
           {title: 'External url', value: 'external'},
         ],
-        layout: 'radio'
-      }
+      },
     },
     {
       name: 'page',
+      title: 'Page',
       type: 'reference',
       to: [{type: 'page'}],
-      title: 'Page',
-      hidden: ({parent}) => parent?.type !== 'page'
+      hidden: ({parent}) => parent?.linkType !== 'internal',
     },
     {
       name: 'url',
-      type: 'url',
       title: 'URL',
-      hidden: ({parent}) => parent?.type !== 'external'
-    }
-  ]
+      type: 'url',
+      hidden: ({parent}) => parent?.linkType !== 'external',
+    },
+  ],
 };
