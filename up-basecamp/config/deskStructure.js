@@ -227,6 +227,7 @@ S.listItem()
                 .title('Settings')
                 .items([
                   S.documentTypeListItem('language').icon(CaseIcon).title('Languages'),
+                singletonListItem(S, "webNavBar", "Navbar")
                 ])
             ),
     ]);

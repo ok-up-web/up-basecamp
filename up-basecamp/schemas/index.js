@@ -65,6 +65,9 @@ import imageTextBlock from './blocks/imageTextBlock'
 import eventType from './calendar/event'
 import trail from './trail/trail'
 
+import webNavBar from './settings/webNavBar'
+import webNavBarMenuItem from './settings/webNavBarMenuItem'
+
 export const schemaTypes = [
 
 company,
@@ -113,5 +116,7 @@ language,
 personGallery,
 imageTextBlock,
 eventType,
-trail
+trail,
+webNavBar,
+webNavBarMenuItem
 ]
