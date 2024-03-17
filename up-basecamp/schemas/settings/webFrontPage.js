@@ -1,7 +1,7 @@
 export default {
   name: 'webFrontpage',
   type: 'document',
-  title: 'Web Frontpage',
+  title: 'Web - Frontpage',
   fields: [
     {
   name: 'language',
@@ -78,17 +78,20 @@ export default {
         }
       ],
     },
-  ],preview: {
-  select: {
-    title: 'title', // Assuming you have a title field in your schema
-    languageAbbreviation: 'language.abbreviation',
-    media: 'mainImage', // Assuming you want to keep the main image in the preview
-  },
-  prepare(selection) {
-    const { title, languageAbbreviation, media } = selection;
-    return {
-      title: `${title} - ${languageAbbreviation}`,
-      media,
-    };
+  ],
+  preview: {
+    select: {
+      title: 'mainHeading', // Make sure this matches the field you want to use for the title.
+      languageAbbreviation: 'language.abbreviation',
+      media: 'headerImage', // Updated to match the actual image field name.
+    },
+    prepare(selection) {
+      const { title, languageAbbreviation, media } = selection;
+      // Handles potentially undefined values to ensure robust preview text.
+      return {
+        title: `${title ? title : 'No Title'} - ${languageAbbreviation ? languageAbbreviation : 'No Language'}`,
+        media, // If media is undefined, the preview won't show an image, which is fine.
+      };
+    },
   },
 }

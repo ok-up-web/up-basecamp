@@ -2,7 +2,6 @@ export default {
   name: 'webNavBar',
   type: 'document',
   title: 'NavBar',
-  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fieldsets: [
     {
   name: 'language',
