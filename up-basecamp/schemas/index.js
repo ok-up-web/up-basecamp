@@ -71,6 +71,8 @@ import webNavBarMenuItem from './settings/webNavBarMenuItem'
 import webFooter from './settings/webFooter'
 import webFooterMenuItem from './settings/webFooterMenuItem'
 
+import webFrontpageSweden from './settings/webFrontpageSweden'
+
 export const schemaTypes = [
 
 company,
@@ -122,5 +124,6 @@ eventType,
 webNavBar,
 webNavBarMenuItem,
 webFooter,
-webFooterMenuItem
+webFooterMenuItem,
+webFrontpageSweden
 ]

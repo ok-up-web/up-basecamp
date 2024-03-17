@@ -4,6 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
+  name: 'language',
+  title: 'Language',
+  type: 'reference',
+  to: [{ type: 'language' }],
+  description: 'Select the language this page is associated with.',
+},
+    {
       name: 'column1Title',
       title: 'Column 1 - Title',
       type: 'string',

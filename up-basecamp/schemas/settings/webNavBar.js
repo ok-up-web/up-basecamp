@@ -5,6 +5,13 @@ export default {
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fieldsets: [
     {
+  name: 'language',
+  title: 'Language',
+  type: 'reference',
+  to: [{ type: 'language' }],
+  description: 'Select the language this page is associated with.',
+},
+    {
       name: 'message',
       title: 'Header message',
       options: {collapsible: true, collapsed: false}
