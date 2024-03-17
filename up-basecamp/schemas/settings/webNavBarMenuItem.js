@@ -9,6 +9,22 @@ export default {
       title: 'Titel'
     },
     {
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 200,
+        slugify: input => input
+                             .toLowerCase()
+                             .replace(/\s+/g, '-')
+                             .replace(/ä/g, 'a')
+                             .replace(/å/g, 'a')
+                             .replace(/ö/g, 'o')
+                             .slice(0, 200)
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'type',
       type: 'string',
       title: 'Typ',
