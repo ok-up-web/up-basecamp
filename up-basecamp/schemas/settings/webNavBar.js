@@ -50,7 +50,7 @@ export default {
           }
         },
         {
-          name: 'pageLink',
+          name: 'page',
           title: 'Internal page',
           type: 'reference',
           to: [{ type: 'page' }],
