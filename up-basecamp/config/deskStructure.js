@@ -229,7 +229,7 @@ S.listItem()
                   S.documentTypeListItem('language').icon(CaseIcon).title('Languages'),
                   S.documentTypeListItem('webFrontpage').icon(CaseIcon).title('Web - Frontpage'),
                   S.documentTypeListItem('webNavBar').icon(CaseIcon).title('Web - Navbar'),
-                  S.documentTypeListItem('webFooter').icon(CaseIcon).title('Web - Navbar'),
+                  S.documentTypeListItem('webFooter').icon(CaseIcon).title('Web - Footer'),
                 ])
             ),
     ]);

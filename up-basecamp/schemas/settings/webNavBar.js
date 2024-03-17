@@ -2,14 +2,9 @@ export default {
   name: 'webNavBar',
   type: 'document',
   title: 'NavBar',
+
   fieldsets: [
-    {
-  name: 'language',
-  title: 'Language',
-  type: 'reference',
-  to: [{ type: 'language' }],
-  description: 'Select the language this page is associated with.',
-},
+
     {
       name: 'message',
       title: 'Header message',
@@ -17,6 +12,13 @@ export default {
     }
   ],
   fields: [
+    {
+  name: 'language',
+  title: 'Language',
+  type: 'reference',
+  to: [{ type: 'language' }],
+  description: 'Select the language this page is associated with.',
+},
     {
       name: 'showMessage',
       type: 'boolean',
@@ -70,6 +72,7 @@ export default {
         }
       ]
     },
+
     {
       name: 'leftLinks',
       type: 'array',
@@ -82,5 +85,18 @@ export default {
       of: [{type: 'reference', to: [{type: 'webNavBarMenuItem'}]}],
       title: 'Menu items right'
     }
-  ]
-};
+  ],
+  preview: {
+    select: {
+      languageAbbreviation: 'language.abbreviation',
+     },
+    prepare(selection) {
+      const { title, languageAbbreviation, media } = selection;
+      // Handles potentially undefined values to ensure robust preview text.
+      return {
+        title: `Navbar - ${languageAbbreviation ? languageAbbreviation : 'No Language'}`,
+        media, // If media is undefined, the preview won't show an image, which is fine.
+      };
+    },
+  },
+  }

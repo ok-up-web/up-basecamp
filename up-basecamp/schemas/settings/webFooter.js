@@ -58,4 +58,17 @@ export default {
       description: 'Select page for Privacy Policy',
     },
   ],
-};
+  preview: {
+    select: {
+      languageAbbreviation: 'language.abbreviation',
+     },
+    prepare(selection) {
+      const { title, languageAbbreviation, media } = selection;
+      // Handles potentially undefined values to ensure robust preview text.
+      return {
+        title: `Footer - ${languageAbbreviation ? languageAbbreviation : 'No Language'}`,
+        media, // If media is undefined, the preview won't show an image, which is fine.
+      };
+    },
+  },
+  }
