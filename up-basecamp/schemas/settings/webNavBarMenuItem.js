@@ -25,7 +25,7 @@ export default {
       type: 'reference',
       to: [{type: 'page'}],
       title: 'Page',
-      hidden: ({parent}) => parent?.type !== 'page'
+      hidden: ({parent}) => parent?.type !== 'internal'
     },
     {
       name: 'url',
