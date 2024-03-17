@@ -71,7 +71,7 @@ import webNavBarMenuItem from './settings/webNavBarMenuItem'
 import webFooter from './settings/webFooter'
 import webFooterMenuItem from './settings/webFooterMenuItem'
 
-import webFrontpageSweden from './settings/webFrontpageSweden'
+import webFrontpage from './settings/webFrontpage'
 
 export const schemaTypes = [
 
@@ -125,5 +125,5 @@ webNavBar,
 webNavBarMenuItem,
 webFooter,
 webFooterMenuItem,
-webFrontpageSweden
+webFrontpage
 ]
