@@ -207,6 +207,12 @@ S.listItem()
             ])
         ),
 
+        //Search Phrases
+        S.listItem()
+        .title('Search Phrase')
+        .schemaType('searchPhrase')
+        .child(S.documentTypeList('searchPhrase').title('Search Phrase')),
+
         //kiosk
         S.listItem()
           .title('Kiosk')

@@ -72,7 +72,7 @@ import webFooter from './settings/webFooter'
 import webFooterMenuItem from './settings/webFooterMenuItem'
 
 import webFrontpage from './settings/webFrontpage'
-
+import searchPhrase from './searchPhrase/searchPhrase'
 export const schemaTypes = [
 
 company,
@@ -125,5 +125,6 @@ webNavBar,
 webNavBarMenuItem,
 webFooter,
 webFooterMenuItem,
-webFrontpage
+webFrontpage,
+searchPhrase
 ]

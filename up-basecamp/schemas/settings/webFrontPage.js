@@ -39,23 +39,12 @@ export default {
       type: 'array',
       of: [
         { type: 'profileBlock' },
-        { type: 'checklistBlock' },
         { type: 'locationBlock' },
         { type: 'spotBlock' },
         { type: 'articleBlock' },
       ],
     },
-    {
-      name: 'selectedArticles',
-      title: 'Selected Articles',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'article' }],
-        },
-      ],
-    },
+ 
     {
       name: 'selectedPackingLists',
       title: 'Selected Packing Lists',
@@ -78,13 +67,22 @@ export default {
         }
       ],
     },
+    {
+      name: 'searchPhrase',
+      title: 'Selected search phrases',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'searchPhrase' }],
+        },
+      ],
+    },
   ],
   preview: {
     select: {
-      title: 'mainHeading', // Make sure this matches the field you want to use for the title.
       languageAbbreviation: 'language.abbreviation',
-      media: 'headerImage', // Updated to match the actual image field name.
-    },
+     },
     prepare(selection) {
       const { title, languageAbbreviation, media } = selection;
       // Handles potentially undefined values to ensure robust preview text.
