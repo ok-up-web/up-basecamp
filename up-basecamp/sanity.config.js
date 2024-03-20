@@ -5,6 +5,7 @@ import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
 import { myStructure } from './config/deskStructure'
 
+import {colorInput} from '@sanity/color-input'
 
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(["publish", "discardChanges", "restore"])
@@ -19,7 +20,7 @@ export default defineConfig({
   projectId: 'en11pc9t',
   dataset: 'production',
 
-  plugins: [deskTool({ structure: myStructure }), visionTool()],
+  plugins: [deskTool({ structure: myStructure }), visionTool(), colorInput()],
 
   schema: {
     types: schemaTypes,
