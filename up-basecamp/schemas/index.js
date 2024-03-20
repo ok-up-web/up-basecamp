@@ -71,7 +71,7 @@ import webNavBarMenuItem from './settings/webNavBarMenuItem'
 import webFooter from './settings/webFooter'
 import webFooterMenuItem from './settings/webFooterMenuItem'
 
-import webFrontpage from './settings/webFrontpage'
+import webFrontpage from './settings/webFrontPage'
 import searchPhrase from './searchPhrase/searchPhrase'
 
 export const schemaTypes = [
