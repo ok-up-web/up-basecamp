@@ -73,8 +73,8 @@ import webFooterMenuItem from './settings/webFooterMenuItem'
 
 import webFrontpage from './settings/webFrontpage'
 import searchPhrase from './searchPhrase/searchPhrase'
-export const schemaTypes = [
 
+export const schemaTypes = [
 company,
 businessChain,
 mainEquipmentCategory,

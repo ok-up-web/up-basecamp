@@ -44,7 +44,6 @@ export default {
         { type: 'articleBlock' },
       ],
     },
- 
     {
       name: 'selectedPackingLists',
       title: 'Selected Packing Lists',
